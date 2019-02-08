@@ -67,7 +67,7 @@ class Pages extends React.Component {
     return (
       <div>
         <Swiper {...params} shouldSwiperUpdate>
-          <section className="page">
+          <div className="page">
             <div className="page__section page__text">
               <h3 className="headline--two">Ok Michael.</h3>
               <h3 className="headline--two">
@@ -80,9 +80,9 @@ class Pages extends React.Component {
               </a>
             </div>
             <div className="page__section page__visual" />
-          </section>
+          </div>
 
-          <section className="page" data-hash="slide2">
+          <div className="page" data-hash="slide2">
             <div className="page__section page__text">
               <h3 className="headline--two">
                 As you know, <span className="personal">£97</span>, or just over
@@ -96,9 +96,9 @@ class Pages extends React.Component {
               </a>
             </div>
             <div className="page__section page__visual" />
-          </section>
+          </div>
 
-          <section className="page" data-hash="slide3">
+          <div className="page" data-hash="slide3">
             <div className="page__section page__text">
               <h3 className="headline--two">
                 The better news is that <span className="employer">£86</span>{" "}
@@ -110,9 +110,9 @@ class Pages extends React.Component {
               </a>
             </div>
             <div className="page__section page__visual" />
-          </section>
+          </div>
 
-          <section className="page" data-hash="slide4">
+          <div className="page" data-hash="slide4">
             <div className="page__section page__text">
               <h3 className="headline--two">
                 The <i>even</i> better news is that the remaining{" "}
@@ -125,9 +125,9 @@ class Pages extends React.Component {
               </a>
             </div>
             <div className="page__section page__visual" />
-          </section>
+          </div>
 
-          <section className="page" data-hash="slide5">
+          <div className="page" data-hash="slide5">
             <div className="page__section page__text">
               <h3 className="headline--two">
                 The more you contribute each month, the more income you will
@@ -139,9 +139,9 @@ class Pages extends React.Component {
               </a>
             </div>
             <div className="page__section page__visual" />
-          </section>
+          </div>
 
-          <section className="page" data-hash="slide6">
+          <div className="page" data-hash="slide6">
             <div className="page__section page__text">
               <h3 className="headline--two">
                 Increase your salary contributions by just 1% to make a big
@@ -162,7 +162,7 @@ class Pages extends React.Component {
                 {this.props.amount}
               </div>
             </div>
-          </section>
+          </div>
         </Swiper>
       </div>
     );

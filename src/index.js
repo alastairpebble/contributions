@@ -5,7 +5,7 @@ import SmartModal from "./SmartModal";
 
 import SmartNavTopBreadcrumbs from "./SmartNavTopBreadcrumbs";
 import Pages from "./pages";
-import PotText from "./pottext";
+//import PotText from "./pottext";
 
 import "./styles.css";
 import "./pages.css";
