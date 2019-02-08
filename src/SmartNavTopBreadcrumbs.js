@@ -3,7 +3,7 @@ import React from "react";
 class SmartNavTopBreadcumbs extends React.Component {
   render() {
     return (
-      <nav class="SmartNavTopBreadcumbs">
+      <nav className="SmartNavTopBreadcumbs">
         <div />
       </nav>
     );

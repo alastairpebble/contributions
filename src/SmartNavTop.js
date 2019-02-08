@@ -3,7 +3,7 @@ import React from "react";
 class SmartNavTop extends React.Component {
   render() {
     return (
-      <nav class="SmartNavTop">
+      <nav className="SmartNavTop">
         <div />
       </nav>
     );
