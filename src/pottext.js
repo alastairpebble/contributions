@@ -1,74 +1,40 @@
-import * as React from "react";
-import styled from "styled-components";
-import { data } from "./pages";
+import React from "react";
+import { connect } from "react-redux";
 
-const MessageContainerWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  overflow: show;
-  background: rgba(255, 0, 0, 0);
-  justify-content: flex-start;
-`;
+const mapStateToProps = state => {
+  return {
+    calculate: state.calculate
+  };
+};
 
-// The main MessageContainer styles
-const MessageContainer = styled.div`
-  max-width: 100%;
-  padding: 0px;
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  border-radius: 16px;
-  text-align: center;
-  justify-content: flex-start;
-  background: rgba(221, 221, 221, 1);
-  color: #002c53;
-  background: transparent;
-  font-family: "Lato";
-  font-size: 48px;
-`;
+class PotText extends React.Component {
+  state = { calculate: 0 };
 
-// Define type of property
-interface Props {
-  content: string;
-  amount: string;
-}
+  futureAmount = () => {
+    console.log("before dispatch");
+    this.props.dispatch({ type: "CALCULATEFUTURE" });
+    //this.setState({ amount: this.props.store.getState().amount })
 
-export class PotText extends React.Component<Props> {
-  // Set default properties
-  static defaultProps = {
-    content: "£",
-    amount: data.amount
+    console.log("after dispatch" + this.state.amount);
   };
 
-  componentDidMount() {
-    console.log("mounted");
-  }
-  componentWillReceiveProps(prevProps) {
-    //console.log("receive props");
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.amount !== this.props.amount) {
-      //console.log(prevProps.amount);
-      //console.log("did update");
-    }
-  }
+  currentAmount = () => {
+    this.props.dispatch({ type: "CALCULATECURRENT" });
+  };
 
   render() {
-    var displayAmount = data.amount;
-
     return (
-      <div>
+      <div className="counter">
+        <h2>Pot Text</h2>
+        <span>AMOUNT {this.props.calculate}</span>
         <div>
-          {this.props.content}
-          {this.props.amount}
-          <b>*</b>
+          <button onClick={this.currentAmount}>-</button>
+
+          <button onClick={this.futureAmount}>+</button>
         </div>
       </div>
     );
   }
 }
+
+export default connect(mapStateToProps)(PotText);

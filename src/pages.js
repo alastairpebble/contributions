@@ -1,16 +1,32 @@
 import React from "react";
 import Swiper from "react-id-swiper";
+import PotText from "./pottext";
+import Counter from "./Counter";
 
-export const data = {
-  amount: 100
+import { connect } from "react-redux";
+
+function mapStateToProps(state) {
+  return {
+    calculate: state.calculate,
+    counter: state.counter,
+    personas: state.personas
+  };
+}
+
+var localData = {
+  people: [
+    {
+      firstname: "Will"
+    },
+    {
+      firstname: "Dan"
+    }
+  ]
 };
 
 class Pages extends React.Component {
-  // Set default properties
-  static defaultProps = {
-    content: "£",
-    amount: data.amount
-  };
+  state = { calculate: 0 };
+
   constructor(props) {
     super(props);
     this.goNext = this.goNext.bind(this);
@@ -26,9 +42,25 @@ class Pages extends React.Component {
     if (this.swiper) this.swiper.slidePrev();
   }
 
+  currentAmount = () => {
+    this.props.dispatch({ type: "CALCULATECURRENT" });
+  };
+
+  futureAmount = () => {
+    this.props.dispatch({ type: "CALCULATEFUTURE" });
+  };
+
+  setCurrentPersona = () => {
+    this.props.dispatch({ type: "CURRENTPERSONA" });
+  };
+
+  setOtherPersona = () => {
+    this.props.dispatch({ type: "NEWPERSONA" });
+  };
+
   doCalculation() {
-    data.number += 100;
-    alert("do calculation" + data.number);
+    //data.number += 100;
+    alert("do calculation" + this.props.amount);
   }
 
   componentDidUpdate(prevProps) {
@@ -64,13 +96,19 @@ class Pages extends React.Component {
         this.swiper = swiper;
       }
     };
+
+    var firstName = localData.people[this.props.personas].firstname;
+    var testDisplay = this.props.personas;
+    console.log("firstName" + firstName);
     return (
       <div>
         <Swiper {...params} shouldSwiperUpdate>
           <div className="page">
             <div className="page__section page__text">
-              <h3 className="headline--two">Ok Michael.</h3>
+              <h3 className="headline--two">Ok.</h3>
               <h3 className="headline--two">
+                {testDisplay}
+                {firstName}
                 Let's investigate this money making contribution a little
                 further.
               </h3>
@@ -145,21 +183,26 @@ class Pages extends React.Component {
             <div className="page__section page__text">
               <h3 className="headline--two">
                 Increase your salary contributions by just 1% to make a big
-                difference to your future income
+                difference to your future income {firstName}
               </h3>
 
-              <a className="button--primary" onClick={this.doCalculation}>
-                Current {this.props.amount}
+              <a className="button--primary" onClick={this.currentAmount}>
+                Current
               </a>
               <br />
-              <a className="button--primary" onClick={this.doCalculation}>
+              <a className="button--primary" onClick={this.futureAmount}>
                 Future
+              </a>
+              <a className="button--primary" onClick={this.setCurrentPersona}>
+                Set current persona
+              </a>
+              <a className="button--primary" onClick={this.setOtherPersona}>
+                Set other persona
               </a>
             </div>
             <div className="page__section page__visual">
               <div>
-                This is our calculation
-                {this.props.amount}
+                <PotText />
               </div>
             </div>
           </div>
@@ -169,4 +212,4 @@ class Pages extends React.Component {
   }
 }
 
-export default Pages;
+export default connect(mapStateToProps)(Pages);
