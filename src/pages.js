@@ -13,17 +13,6 @@ function mapStateToProps(state) {
   };
 }
 
-var localData = {
-  people: [
-    {
-      firstname: "Will"
-    },
-    {
-      firstname: "Dan"
-    }
-  ]
-};
-
 class Pages extends React.Component {
   state = { calculate: 0 };
 
@@ -58,14 +47,9 @@ class Pages extends React.Component {
     this.props.dispatch({ type: "NEWPERSONA" });
   };
 
-  doCalculation() {
-    //data.number += 100;
-    alert("do calculation" + this.props.amount);
-  }
-
   componentDidUpdate(prevProps) {
-    if (prevProps.amount !== this.props.amount) {
-      console.log(prevProps.amount);
+    if (prevProps.calculate !== this.props.calculate) {
+      console.log(prevProps.calculate);
       console.log("did update");
     }
   }
@@ -97,9 +81,19 @@ class Pages extends React.Component {
       }
     };
 
-    var firstName = localData.people[this.props.personas].firstname;
-    var testDisplay = this.props.personas;
-    console.log("firstName" + firstName);
+    var localData = {
+      people: [
+        {
+          firstname: "Will"
+        },
+        {
+          firstname: "Dan"
+        }
+      ]
+    };
+    //var firstName = localData.people[this.props.personas].firstname;
+
+    //console.log("firstName" + firstName);
     return (
       <div>
         <Swiper {...params} shouldSwiperUpdate>
@@ -107,8 +101,6 @@ class Pages extends React.Component {
             <div className="page__section page__text">
               <h3 className="headline--two">Ok.</h3>
               <h3 className="headline--two">
-                {testDisplay}
-                {firstName}
                 Let's investigate this money making contribution a little
                 further.
               </h3>
@@ -183,7 +175,7 @@ class Pages extends React.Component {
             <div className="page__section page__text">
               <h3 className="headline--two">
                 Increase your salary contributions by just 1% to make a big
-                difference to your future income {firstName}
+                difference to your future income
               </h3>
 
               <a className="button--primary" onClick={this.currentAmount}>

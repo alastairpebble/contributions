@@ -5,7 +5,6 @@ function calculateAmount(time) {
       return 1234;
       break;
     case "future":
-      console.log("5678");
       return 5678;
       break;
   }
@@ -16,8 +15,10 @@ export default function calculate(state = 0, action) {
   console.log(action);
   switch (action.type) {
     case "CALCULATECURRENT":
+      var amount = calculateAmount("current");
       console.log(state);
-      return calculateAmount("current");
+      console.log("amount" + amount);
+      return amount;
       break;
     case "CALCULATEFUTURE":
       console.log(state);

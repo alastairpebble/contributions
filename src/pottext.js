@@ -11,11 +11,11 @@ class PotText extends React.Component {
   state = { calculate: 0 };
 
   futureAmount = () => {
-    console.log("before dispatch");
+    //console.log("before dispatch");
     this.props.dispatch({ type: "CALCULATEFUTURE" });
     //this.setState({ amount: this.props.store.getState().amount })
 
-    console.log("after dispatch" + this.state.amount);
+    //console.log("after dispatch" + this.state.amount);
   };
 
   currentAmount = () => {
