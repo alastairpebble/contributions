@@ -1,0 +1,113 @@
+.swiper-container {
+  min-height: calc(
+    100vh - var(--smartnav-top-height) - var(--smartnav-top-height)
+  );
+}
+
+.swiper-pagination-bullets {
+  bottom: initial;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  font-family: "Lato", sans-serif;
+  min-height: 80vh;
+}
+
+.page__text {
+  flex: 1;
+  padding: 0px 32px;
+  text-align: center;
+  background: transparent;
+}
+
+.page__visual {
+  flex: 1;
+  width: 100%;
+  height: 200px;
+  background: white;
+}
+
+@media (orientation: portrait) {
+  .page {
+    flex-direction: column;
+  }
+
+  .page__section {
+    min-height: calc(
+      (100vh - var(--smartnav-top-height) - var(--smartnav-top-height)) / 2
+    );
+  }
+  .page__text {
+    order: 2;
+  }
+  .page__visual {
+    order: 1;
+  }
+
+  .SmartModal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+  }
+}
+
+@media (orientation: landscape) {
+  .page {
+    flex-direction: row;
+  }
+
+  .page__text {
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .swiper-container {
+    max-width: 768px;
+  }
+}
+
+.headline--two {
+  font-family: "Lato", sans-serif;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.headline--two span {
+  font-weight: 700;
+  border-radius: 6px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding: 0px 6px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .headline--two {
+    font-size: calc(28px * 0.875);
+    line-height: calc(34px * 0.875);
+  }
+}
+
+.personal {
+  background: orange;
+  color: #002c53;
+}
+.employer {
+  background: #4fe2c0;
+  color: #002c53;
+}
+
+.government {
+  background: #ff9cad;
+  color: #002c53;
+}

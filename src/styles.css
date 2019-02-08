@@ -1,0 +1,49 @@
+:root {
+  --main-bg-color: #f7f7f7;
+  --smartnav-top-height: 48px;
+  --smartnav-top-breadcrumbs-height: 48px;
+}
+
+body {
+  margin: 0;
+  background: var(--main-bg-color);
+}
+.SmartNavTop {
+  background: #ffffff;
+  height: var(--smartnav-top-height);
+}
+.SmartNavTopBreadcumbs {
+  background: #002244;
+  height: var(--smartnav-top-breadcrumbs-height);
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.button--primary {
+  display: block;
+  text-decoration: none;
+  background: #00ddff;
+  color: #002c53;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.button--primary:hover {
+  background: #00c9fa;
+}
+
+.button--primary:active {
+  background: #00335a;
+  color: #fff;
+}
+
+@media (min-width: 768px), (orientation: landscape) {
+  .button--primary {
+    display: inline-block;
+  }
+}

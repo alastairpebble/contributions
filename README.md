@@ -1,2 +1,0 @@
-# contributions
-Created with CodeSandbox
