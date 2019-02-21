@@ -2,8 +2,9 @@ import React from "react";
 import Swiper from "react-id-swiper";
 import PotText from "./pottext";
 import Counter from "./Counter";
-
+import { data } from "./data";
 import { connect } from "react-redux";
+import { PieSegments } from "./piesegments";
 
 function mapStateToProps(state) {
   return {
@@ -21,6 +22,11 @@ class Pages extends React.Component {
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
     //this.swiper = null;
+
+    this.state = {
+      calculate: 0,
+      data: null
+    };
   }
 
   goNext() {
@@ -39,6 +45,10 @@ class Pages extends React.Component {
     this.props.dispatch({ type: "CALCULATEFUTURE" });
   };
 
+  superFutureAmount = () => {
+    this.props.dispatch({ type: "CALCULATESUPERFUTURE" });
+  };
+
   setCurrentPersona = () => {
     this.props.dispatch({ type: "CURRENTPERSONA" });
   };
@@ -47,6 +57,20 @@ class Pages extends React.Component {
     this.props.dispatch({ type: "NEWPERSONA" });
   };
 
+  dataFetched(data) {
+    console.log("Some external data");
+    console.log(JSON.stringify(data));
+    console.log(data.content.personas);
+    this.setState({ data: data });
+    //alert(JSON.stringify(data));
+  }
+
+  componentDidMount() {
+    fetch("./staticdata.js")
+      .then(response => response.json())
+      .then(data => this.dataFetched(data));
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.calculate !== this.props.calculate) {
       console.log(prevProps.calculate);
@@ -54,7 +78,7 @@ class Pages extends React.Component {
     }
   }
   render() {
-    const params = {
+    const swiperparams = {
       preventClicks: false,
       hashNavigation: {
         replaceState: true,
@@ -65,135 +89,258 @@ class Pages extends React.Component {
         type: "bullets",
         clickable: true
       },
-      /*
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      */
-      keyboard: {
-        enabled: true,
-        onlyInViewport: false
-      },
       runCallbacksOnInit: true,
+      shouldSwiperUpdate: true,
+      onSlideChangeStart: swiper => {
+        console.log("onSlideChangeStart");
+      },
       onInit: swiper => {
+        console.log("swiper init");
         this.swiper = swiper;
       }
     };
 
-    var localData = {
-      people: [
-        {
-          firstname: "Will"
-        },
-        {
-          firstname: "Dan"
-        }
-      ]
-    };
-    //var firstName = localData.people[this.props.personas].firstname;
-
-    //console.log("firstName" + firstName);
+    console.log("swiper init not called");
     return (
       <div>
-        <Swiper {...params} shouldSwiperUpdate>
+        <Swiper {...swiperparams} shouldSwiperUpdate>
           <div className="page">
             <div className="page__section page__text">
-              <h3 className="headline--two">Ok.</h3>
-              <h3 className="headline--two">
-                Let's investigate this money making contribution a little
-                further.
-              </h3>
-
-              <a className="button--primary" href="#slide2">
-                Next
-              </a>
+              <div className="page__text__content">
+                <h3 className="headline--two">
+                  <b>£200</b> has been added to your pension. Though, it
+                  actually cost you much less.
+                </h3>
+                <h3 className="headline--two">Let’s find out how.</h3>
+              </div>
+              <div className="page__text__actions">
+                <a className="button--primary" href="#slide2">
+                  Continue
+                </a>
+              </div>
             </div>
-            <div className="page__section page__visual" />
+            <div className="page__section page__visual">
+              <div className="page__visual__content page__visual--binoculars" />
+            </div>
           </div>
 
           <div className="page" data-hash="slide2">
             <div className="page__section page__text">
-              <h3 className="headline--two">
-                As you know, <span className="personal">£97</span>, or just over
-                half, came from you. <br />
-                <br /> That’s <span className="personal">5%</span> of your
-                salary.
-              </h3>
-
-              <a className="button--primary" href="#slide3">
-                Next
-              </a>
+              <div className="page__text__content">
+                <h3 className="headline--two">
+                  <span className="personal">£100</span> came out of your pay.
+                </h3>
+              </div>
+              <div className="page__text__actions">
+                <a className="button--primary" href="#slide3">
+                  Continue
+                </a>
+              </div>
             </div>
-            <div className="page__section page__visual" />
+            <div className="page__section page__visual">
+              <div className="page__visual__content">
+                <div className="page__visual__pie__wrapper">
+                  <div className="page__visual__pie">
+                    <PieSegments
+                      percentage="0.5"
+                      color="#50E2C0"
+                      strokeColor="#50E2C0"
+                    />
+                  </div>
+                </div>
+                <div className="page__visual__pie__wrapper">
+                  <div className="page__visual__pie page__visual__pie--rotate-personal">
+                    <PieSegments
+                      percentage="0.5"
+                      color="#FF9C36"
+                      strokeColor="#FF9C36"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="page" data-hash="slide3">
             <div className="page__section page__text">
-              <h3 className="headline--two">
-                The better news is that <span className="employer">£86</span>{" "}
-                was put in by Tesco (that’s in addition to your regular pay).
-              </h3>
-
-              <a className="button--primary" href="#slide4">
-                Next
-              </a>
+              <div className="page__text__content">
+                <h3 className="headline--two">
+                  Of which <span className="government">£25</span> is actually
+                  contributed by the government in the form of a tax rebate.
+                </h3>
+              </div>
+              <div className="page__text__actions">
+                <a className="button--primary" href="#slide4">
+                  Continue
+                </a>
+              </div>
             </div>
-            <div className="page__section page__visual" />
+            <div className="page__section page__visual">
+              <div className="page__visual__content">
+                <div className="page__visual__pie__wrapper">
+                  <div className="page__visual__pie page__visual__pie--translate-employer">
+                    <PieSegments
+                      percentage="0.5"
+                      color="#50E2C0"
+                      strokeColor="#50E2C0"
+                    />
+                  </div>
+                </div>
+                <div className="page__visual__pie__wrapper">
+                  <div className="page__visual__pie page__visual__pie--rotate-personal">
+                    <PieSegments
+                      percentage="0.395"
+                      color="#FF9C36"
+                      strokeColor="#FF9C36"
+                    />
+                  </div>
+                </div>
+                <div className="page__visual__pie__wrapper">
+                  <div className="page__visual__pie page__visual__pie--rotate-tax">
+                    <PieSegments
+                      percentage="0.1"
+                      color="#FF9CAD"
+                      strokeColor="#FF9CAD"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="page" data-hash="slide4">
             <div className="page__section page__text">
-              <h3 className="headline--two">
-                The <i>even</i> better news is that the remaining{" "}
-                <span className="government">£16</span> was topped up by the
-                government.
-              </h3>
-
-              <a className="button--primary" href="#slide5">
-                Next
-              </a>
+              <div className="page__text__content">
+                <h3 className="headline--two">
+                  Your employer put in the remaining
+                  <span className="employer">£100</span>
+                </h3>
+              </div>
+              <div className="page__text__actions">
+                <a className="button--primary" href="#slide5">
+                  Continue
+                </a>
+              </div>
             </div>
-            <div className="page__section page__visual" />
+            <div className="page__section page__visual">
+              <div className="page__visual__content">
+                <div className="page__visual__pie__wrapper">
+                  <div className="page__visual__pie">
+                    <PieSegments
+                      percentage="0.5"
+                      color="#50E2C0"
+                      strokeColor="#50E2C0"
+                    />
+                  </div>
+                </div>
+                <div className="page__visual__pie__wrapper">
+                  <div className="page__visual__pie page__visual__pie--rotate-personal">
+                    <PieSegments
+                      percentage="0.395"
+                      color="#FF9C36"
+                      strokeColor="#FF9C36"
+                    />
+                  </div>
+                </div>
+                <div className="page__visual__pie__wrapper">
+                  <div className="page__visual__pie page__visual__pie--rotate-tax">
+                    <PieSegments
+                      percentage="0.1"
+                      color="#FF9CAD"
+                      strokeColor="#FF9CAD"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="page" data-hash="slide5">
             <div className="page__section page__text">
-              <h3 className="headline--two">
-                The more you contribute each month, the more income you will
-                earn and invest towards retirement.
-              </h3>
-
-              <a className="button--primary" href="#slide6">
-                Next
-              </a>
+              <div className="page__text__content">
+                <h3 className="headline--two headline--two--bold">
+                  <b>Did you know?</b>
+                </h3>
+                <h3 className="headline--two">
+                  Small increases to these contributions will make a big
+                  difference to your retirement income.
+                </h3>
+              </div>
+              <div className="page__text__actions">
+                <a className="button--primary" href="#slide6">
+                  Continue
+                </a>
+              </div>
             </div>
-            <div className="page__section page__visual" />
+            <div className="page__section page__visual">
+              <div className="page__visual__content page__visual--statement" />
+            </div>
           </div>
 
           <div className="page" data-hash="slide6">
             <div className="page__section page__text">
-              <h3 className="headline--two">
-                Increase your salary contributions by just 1% to make a big
-                difference to your future income
-              </h3>
-
-              <a className="button--primary" onClick={this.currentAmount}>
-                Current
-              </a>
-              <br />
-              <a className="button--primary" onClick={this.futureAmount}>
-                Future
-              </a>
-              <a className="button--primary" onClick={this.setCurrentPersona}>
-                Set current persona
-              </a>
-              <a className="button--primary" onClick={this.setOtherPersona}>
-                Set other persona
-              </a>
+              <div className="page__text__content">
+                <h3 className="headline--two">
+                  <b>Contribution level</b>
+                </h3>
+                <h3 className="headline--three">
+                  *Your employer will match your contributions up to 5%
+                </h3>
+              </div>
+              <div className="page__text__actions">
+                <a className="button--primary" onClick={this.currentAmount}>
+                  Current (
+                  {Math.round(
+                    data.personas[0].pensions.pot.now.contributions.personal *
+                      100
+                  )}
+                  %)
+                </a>
+                <a className="button--primary" onClick={this.futureAmount}>
+                  Future (
+                  {Math.round(
+                    data.personas[0].pensions.pot.future.contributions
+                      .personal * 100
+                  )}
+                  %)
+                </a>
+                <a className="button--primary" onClick={this.superFutureAmount}>
+                  Super Future (
+                  {Math.round(
+                    data.personas[0].pensions.pot.superfuture.contributions
+                      .personal * 100
+                  )}
+                  %)
+                </a>
+              </div>
             </div>
             <div className="page__section page__visual">
-              <div>
+              <div className="page__visual__content">
+                <PotText />
+              </div>
+            </div>
+          </div>
+
+          <div className="page" data-hash="slide7">
+            <div className="page__section page__text">
+              <div className="page__text__content">
+                <h3 className="headline--two">
+                  Please confirm the change to your regular pension contribution
+                  amount
+                </h3>
+              </div>
+              <div className="page__text__actions">
+                <a className="button--primary" onClick={this.currentAmount}>
+                  Current
+                </a>
+                <br />
+                <a className="button--primary" onClick={this.futureAmount}>
+                  Future
+                </a>
+              </div>
+            </div>
+            <div className="page__section page__visual">
+              <div className="page__visual__content">
                 <PotText />
               </div>
             </div>

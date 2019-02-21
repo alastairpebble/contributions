@@ -8,7 +8,7 @@ const mapStateToProps = state => {
 };
 
 class PotText extends React.Component {
-  state = { calculate: 0 };
+  //state = { calculate: 0 };
 
   futureAmount = () => {
     //console.log("before dispatch");
@@ -19,15 +19,21 @@ class PotText extends React.Component {
   };
 
   currentAmount = () => {
-    this.props.dispatch({ type: "CALCULATECURRENT" });
+    this.props.dispatch({ type: "CALCULATECURRENT", data: { test: 123456 } });
   };
 
   render() {
     return (
       <div className="counter">
-        <h2>Pot Text</h2>
-        <span>AMOUNT {this.props.calculate}</span>
-        <div>
+        <h2 className="headline--two">
+          <b>Projected Total</b>
+        </h2>
+
+        <h1 className="headline--one">
+          £{Math.round(this.props.calculate.number).toLocaleString("en")}
+        </h1>
+        <span>({Math.round(this.props.calculate.percentage)}%)</span>
+        <div style={{ opacity: 0 }}>
           <button onClick={this.currentAmount}>-</button>
 
           <button onClick={this.futureAmount}>+</button>

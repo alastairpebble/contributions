@@ -27,7 +27,7 @@ body {
   text-decoration: none;
   background: #00ddff;
   color: #002c53;
-  padding: 8px 16px;
+  padding: 12px 16px;
   border-radius: 6px;
   font-weight: 700;
   font-size: 16px;
@@ -45,5 +45,37 @@ body {
 @media (min-width: 768px), (orientation: landscape) {
   .button--primary {
     display: inline-block;
+  }
+}
+
+.smartmodal__wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.smartmodal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+@media (min-width: 768px) {
+  .smartmodal {
+    width: 75vw;
+    margin-left: 12.5vw;
+    top: 20%;
+    height: 60vh;
+    border-radius: 6px;
+    padding: 24px;
+  }
+  .page {
+    min-height: 50vh;
   }
 }

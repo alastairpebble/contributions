@@ -12,6 +12,9 @@ export default function personas(state = 0, action) {
   //console.log(action);
 
   switch (action.type) {
+    case "GETPERSONAS":
+      return persona;
+      break;
     case "CURRENTPERSONA":
       //console.log(persona);
       return 0;

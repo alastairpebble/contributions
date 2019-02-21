@@ -14,11 +14,13 @@ import Pages from "./pages";
 
 import "./styles.css";
 import "./pages.css";
+import "./piesegments.css";
 
 import reducer from "./reducers/index";
 
 const store = createStore(reducer);
 store.dispatch({ type: "CALCULATECURRENT" });
+store.dispatch({ type: "GETPERSONAS" });
 store.dispatch({ type: "NEWPERSONA" });
 console.log(store.getState());
 

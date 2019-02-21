@@ -2,7 +2,11 @@ import React from "react";
 
 class SmartModal extends React.Component {
   render() {
-    return <section class="SmartModal">{this.props.children}</section>;
+    return (
+      <section className="smartmodal__wrapper">
+        <section className="smartmodal">{this.props.children}</section>
+      </section>
+    );
   }
 }
 
