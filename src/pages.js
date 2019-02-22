@@ -137,24 +137,29 @@ class Pages extends React.Component {
                 </a>
               </div>
             </div>
-            <div className="page__section page__visual">
+            <div className="page__section page__visual page__visual--including-pie">
               <div className="page__visual__content">
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie">
-                    <PieSegments
-                      percentage="0.5"
-                      color="#50E2C0"
-                      strokeColor="#50E2C0"
-                    />
+                <div className="page__visual__pie__all__wrapper">
+                  <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--personal">
+                    <div className="page__visual__pie__label">£100</div>
                   </div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--rotate-personal">
-                    <PieSegments
-                      percentage="0.5"
-                      color="#FF9C36"
-                      strokeColor="#FF9C36"
-                    />
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--translate-employer">
+                      <PieSegments
+                        percentage="0.5"
+                        color="#50E2C0"
+                        strokeColor="#50E2C0"
+                      />
+                    </div>
+                  </div>
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--rotate-personal">
+                      <PieSegments
+                        percentage="0.5"
+                        color="#FF9C36"
+                        strokeColor="#FF9C36"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -175,33 +180,38 @@ class Pages extends React.Component {
                 </a>
               </div>
             </div>
-            <div className="page__section page__visual">
+            <div className="page__section page__visual page__visual--including-pie ">
               <div className="page__visual__content">
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--translate-employer">
-                    <PieSegments
-                      percentage="0.5"
-                      color="#50E2C0"
-                      strokeColor="#50E2C0"
-                    />
+                <div className="page__visual__pie__all__wrapper">
+                  <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--tax">
+                    <div className="page__visual__pie__label">£25</div>
                   </div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--rotate-personal">
-                    <PieSegments
-                      percentage="0.395"
-                      color="#FF9C36"
-                      strokeColor="#FF9C36"
-                    />
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--translate-employer">
+                      <PieSegments
+                        percentage="0.5"
+                        color="#50E2C0"
+                        strokeColor="#50E2C0"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--rotate-tax">
-                    <PieSegments
-                      percentage="0.1"
-                      color="#FF9CAD"
-                      strokeColor="#FF9CAD"
-                    />
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--rotate-personal">
+                      <PieSegments
+                        percentage="0.395"
+                        color="#FF9C36"
+                        strokeColor="#FF9C36"
+                      />
+                    </div>
+                  </div>
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--rotate-tax">
+                      <PieSegments
+                        percentage="0.1"
+                        color="#FF9CAD"
+                        strokeColor="#FF9CAD"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -212,7 +222,7 @@ class Pages extends React.Component {
             <div className="page__section page__text">
               <div className="page__text__content">
                 <h3 className="headline--two">
-                  Your employer put in the remaining
+                  Your employer put in the remaining{" "}
                   <span className="employer">£100</span>
                 </h3>
               </div>
@@ -222,33 +232,38 @@ class Pages extends React.Component {
                 </a>
               </div>
             </div>
-            <div className="page__section page__visual">
+            <div className="page__section page__visual page__visual--including-pie">
               <div className="page__visual__content">
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie">
-                    <PieSegments
-                      percentage="0.5"
-                      color="#50E2C0"
-                      strokeColor="#50E2C0"
-                    />
+                <div className="page__visual__pie__all__wrapper">
+                  <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--employer">
+                    <div className="page__visual__pie__label">£100</div>
                   </div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--rotate-personal">
-                    <PieSegments
-                      percentage="0.395"
-                      color="#FF9C36"
-                      strokeColor="#FF9C36"
-                    />
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--translate-employer">
+                      <PieSegments
+                        percentage="0.5"
+                        color="#50E2C0"
+                        strokeColor="#50E2C0"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--rotate-tax">
-                    <PieSegments
-                      percentage="0.1"
-                      color="#FF9CAD"
-                      strokeColor="#FF9CAD"
-                    />
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--rotate-personal">
+                      <PieSegments
+                        percentage="0.395"
+                        color="#FF9C36"
+                        strokeColor="#FF9C36"
+                      />
+                    </div>
+                  </div>
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--rotate-tax">
+                      <PieSegments
+                        percentage="0.1"
+                        color="#FF9CAD"
+                        strokeColor="#FF9CAD"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -288,34 +303,68 @@ class Pages extends React.Component {
                 </h3>
               </div>
               <div className="page__text__actions">
-                <a className="button--primary" onClick={this.currentAmount}>
-                  Current (
-                  {Math.round(
-                    data.personas[0].pensions.pot.now.contributions.personal *
-                      100
-                  )}
-                  %)
-                </a>
-                <a className="button--primary" onClick={this.futureAmount}>
-                  Future (
-                  {Math.round(
-                    data.personas[0].pensions.pot.future.contributions
-                      .personal * 100
-                  )}
-                  %)
-                </a>
-                <a className="button--primary" onClick={this.superFutureAmount}>
-                  Super Future (
-                  {Math.round(
-                    data.personas[0].pensions.pot.superfuture.contributions
-                      .personal * 100
-                  )}
-                  %)
-                </a>
+                <label
+                  for="contrib1"
+                  className="input__radio"
+                  onClick={this.currentAmount}
+                >
+                  <input
+                    type="radio"
+                    name="contrib"
+                    id="contrib1"
+                    value="0.05"
+                  />
+                  <span>
+                    {Math.round(
+                      data.personas[0].pensions.pot.now.contributions.personal *
+                        100
+                    )}
+                    % (What you pay now)
+                  </span>
+                </label>
+                <label
+                  for="contrib2"
+                  className="input__radio"
+                  onClick={this.futureAmount}
+                >
+                  <input
+                    type="radio"
+                    name="contrib"
+                    id="contrib2"
+                    value="0.06"
+                  />
+                  <span>
+                    {Math.round(
+                      data.personas[0].pensions.pot.future.contributions
+                        .personal * 100
+                    )}
+                    %
+                  </span>
+                </label>
+                <label
+                  for="contrib3"
+                  className="input__radio"
+                  onClick={this.superFutureAmount}
+                >
+                  <input
+                    type="radio"
+                    name="contrib"
+                    id="contrib3"
+                    value="0.07"
+                  />
+                  <span>
+                    {Math.round(
+                      data.personas[0].pensions.pot.superfuture.contributions
+                        .personal * 100
+                    )}
+                    %
+                  </span>
+                </label>
               </div>
             </div>
             <div className="page__section page__visual">
               <div className="page__visual__content">
+                <br />
                 <PotText />
               </div>
             </div>
@@ -324,24 +373,30 @@ class Pages extends React.Component {
           <div className="page" data-hash="slide7">
             <div className="page__section page__text">
               <div className="page__text__content">
-                <h3 className="headline--two">
+                <h2 className="headline--two">
                   Please confirm the change to your regular pension contribution
                   amount
-                </h3>
+                </h2>
               </div>
               <div className="page__text__actions">
-                <a className="button--primary" onClick={this.currentAmount}>
-                  Current
-                </a>
                 <br />
                 <a className="button--primary" onClick={this.futureAmount}>
-                  Future
+                  Confirm
                 </a>
               </div>
             </div>
             <div className="page__section page__visual">
               <div className="page__visual__content">
-                <PotText />
+                <br />
+                <h1 className="headline--one">
+                  <b>New Contributions</b>
+                </h1>
+                <h3 className="headline--three">
+                  Your contributions:{" "}
+                  <span>{Math.round(this.props.calculate.percentage)}%</span>
+                  <br />
+                  Employer contributions: 5%
+                </h3>
               </div>
             </div>
           </div>

@@ -38,13 +38,19 @@ h3 {
   padding: 0px 32px;
 }
 
+.page__visual--including-pie {
+  display: flex;
+  align-items: center;
+}
+
 .page__text__content {
   background: yellow;
   background: transparent;
-  flex: 1;
+  flex: 4;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .page__text__actions {
   background: blue;
@@ -61,13 +67,6 @@ h3 {
   height: 0;
   padding-bottom: 100%;
   position: relative;
-}
-
-.page__visual__pie__wrapper {
-  position: absolute;
-  border: 1px solid transparent;
-  width: 280px;
-  height: 280px;
 }
 
 .page__visual--binoculars {
@@ -121,6 +120,17 @@ h3 {
     max-width: 768px;
   }
 }
+
+.headline--money {
+  font-family: "Lato", sans-serif;
+  font-size: 44px;
+  line-height: 48px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 16px;
+}
+
 .headline--one {
   font-family: "Lato", sans-serif;
   font-size: 36px;
@@ -135,6 +145,7 @@ h3 {
   line-height: 34px;
   letter-spacing: 0.5px;
   font-weight: 500;
+  width: 100%;
 }
 
 .headline--two--bold {
@@ -192,4 +203,18 @@ h3 {
 .government {
   background: #ff9cad;
   color: #002c53;
+}
+
+.input__radio {
+  height: 28px;
+  margin: 4px 0px;
+  text-align: left;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.input__radio span {
+  margin-left: 8px;
+  position: relative;
+  top: 2px;
 }

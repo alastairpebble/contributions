@@ -25,19 +25,25 @@ class PotText extends React.Component {
   render() {
     return (
       <div className="counter">
-        <h2 className="headline--two">
-          <b>Projected Total</b>
-        </h2>
-
         <h1 className="headline--one">
+          <b>Projected Total</b>
+        </h1>
+        <h1 className="headline--money">
           £{Math.round(this.props.calculate.number).toLocaleString("en")}
         </h1>
-        <span>({Math.round(this.props.calculate.percentage)}%)</span>
-        <div style={{ opacity: 0 }}>
-          <button onClick={this.currentAmount}>-</button>
-
-          <button onClick={this.futureAmount}>+</button>
-        </div>
+        <h3 className="headline--three">
+          Giving a monthly income of{" "}
+          <b>
+            £
+            {Math.round(this.props.calculate.income.monthly).toLocaleString(
+              "en"
+            )}
+          </b>{" "}
+          for <b>{this.props.calculate.income.for.years}</b> years
+        </h3>
+        <span style={{ opacity: 0 }}>
+          ({Math.round(this.props.calculate.percentage)}%)
+        </span>
       </div>
     );
   }

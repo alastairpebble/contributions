@@ -1,7 +1,7 @@
 {
-  "name": "swiper",
+  "name": "smart-contributions-celebration",
   "version": "1.0.0",
-  "description": "",
+  "description": "A visual walkthrough of contributions for customer engagement.",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {

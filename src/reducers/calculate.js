@@ -72,14 +72,28 @@ function calculateAmount(time) {
       return {
         percentage:
           data.personas[0].pensions.pot.now.contributions.personal * 100,
-        number: 106310
+        percentage_increase: 0,
+        number: 106310,
+        income: {
+          monthly: 123,
+          for: {
+            years: 15
+          }
+        }
       };
       break;
     case "future":
       return {
         percentage:
           data.personas[0].pensions.pot.future.contributions.personal * 100,
-        number: 116940
+        percentage_increase: 1,
+        number: 116940,
+        income: {
+          monthly: 456,
+          for: {
+            years: 15
+          }
+        }
       };
       break;
     case "superfuture":
@@ -87,7 +101,14 @@ function calculateAmount(time) {
         percentage:
           data.personas[0].pensions.pot.superfuture.contributions.personal *
           100,
-        number: 127570
+        percentage_increase: 2,
+        number: 127570,
+        income: {
+          monthly: 789,
+          for: {
+            years: 15
+          }
+        }
       };
       break;
   }
