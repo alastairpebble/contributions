@@ -242,17 +242,25 @@ h3 {
   border-color: #00c9fa;
 }
 
-.input__radio + label .input__radio__circle {
+.input__radio__circle {
   position: relative;
+  box-sizing: border-box;
   width: 24px;
   height: 24px;
-  background: #fff;
   margin-right: 8px;
   border-radius: 12px;
+  transition: background-color 200ms, border-color 200ms;
+  background: #fff;
   border: 2px solid #a7a7a7;
   box-shadow: inset 0px 0px 0px 4px white;
-  box-sizing: border-box; /* Include padding and border in element's width and height */
-  transition: background-color 300ms, border-color 300ms;
+}
+
+.input__radio__circle:hover {
+  background: #00335a;
+  border: 2px solid #00335a;
+}
+
+.input__radio + label .input__radio__circle {
 }
 
 .input__radio:checked + label .input__radio__circle {
