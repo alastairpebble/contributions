@@ -322,11 +322,9 @@ class Pages extends React.Component {
           <div className="page" data-hash="slide6">
             <div className="page__section page__text">
               <div className="page__text__content">
-                <h3 className="headline--two">
-                  <b>Contribution level</b>
-                </h3>
-                <h3 className="headline--three">
-                  *Your employer will match your contributions up to 5%
+                <h3 className="headline--two headline--two--bold">
+                  Change your contribution level to see the effect on your
+                  projected total
                 </h3>
               </div>
               <div className="page__text__actions">
@@ -405,6 +403,11 @@ class Pages extends React.Component {
                     </span>
                   </label>
                 </div>
+                <h3 className="headline--three">
+                  *Your employer will match your contributions up to 5%
+                  <br />
+                  <br />
+                </h3>
                 <a className="button--primary" href="#slide7">
                   Finish
                 </a>

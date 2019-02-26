@@ -26,7 +26,7 @@ class PotText extends React.Component {
     return (
       <div className="counter">
         <h1 className="headline--one">
-          <b>Projected Total</b>
+          <b>Projected Total*</b>
         </h1>
         <h1 className="headline--money">
           £{Math.round(this.props.calculate.number).toLocaleString("en")}
