@@ -25,7 +25,12 @@ class Pages extends React.Component {
 
     this.state = {
       calculate: 0,
-      data: null
+      data: null,
+      contributions_radio: {
+        contrib1: true,
+        contrib2: false,
+        contrib3: false
+      }
     };
   }
 
@@ -39,14 +44,35 @@ class Pages extends React.Component {
 
   currentAmount = () => {
     this.props.dispatch({ type: "CALCULATECURRENT" });
+    this.setState({
+      contributions_radio: {
+        contrib1: true,
+        contrib2: false,
+        contrib3: false
+      }
+    });
   };
 
   futureAmount = () => {
     this.props.dispatch({ type: "CALCULATEFUTURE" });
+    this.setState({
+      contributions_radio: {
+        contrib1: false,
+        contrib2: true,
+        contrib3: false
+      }
+    });
   };
 
   superFutureAmount = () => {
     this.props.dispatch({ type: "CALCULATESUPERFUTURE" });
+    this.setState({
+      contributions_radio: {
+        contrib1: false,
+        contrib2: false,
+        contrib3: true
+      }
+    });
   };
 
   setCurrentPersona = () => {
@@ -311,6 +337,7 @@ class Pages extends React.Component {
                     name="contrib"
                     id="contrib1"
                     value="0.05"
+                    checked={this.state.contributions_radio.contrib1}
                   />
 
                   <label
@@ -318,6 +345,7 @@ class Pages extends React.Component {
                     className="input__radio__label"
                     onClick={this.currentAmount}
                   >
+                    <span className="input__radio__circle" />
                     <span>
                       {Math.round(
                         data.personas[0].pensions.pot.now.contributions
@@ -334,6 +362,7 @@ class Pages extends React.Component {
                     name="contrib"
                     id="contrib2"
                     value="0.06"
+                    checked={this.state.contributions_radio.contrib2}
                   />
 
                   <label
@@ -341,6 +370,7 @@ class Pages extends React.Component {
                     className="input__radio__label"
                     onClick={this.futureAmount}
                   >
+                    <span className="input__radio__circle" />
                     <span>
                       {Math.round(
                         data.personas[0].pensions.pot.future.contributions
@@ -357,6 +387,7 @@ class Pages extends React.Component {
                     name="contrib"
                     id="contrib3"
                     value="0.07"
+                    checked={this.state.contributions_radio.contrib3}
                   />
 
                   <label
@@ -364,6 +395,7 @@ class Pages extends React.Component {
                     className="input__radio__label"
                     onClick={this.superFutureAmount}
                   >
+                    <span className="input__radio__circle" />
                     <span>
                       {Math.round(
                         data.personas[0].pensions.pot.superfuture.contributions

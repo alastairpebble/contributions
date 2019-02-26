@@ -212,21 +212,21 @@ h3 {
 
 .input__radio__wrapper {
   position: relative;
+  width: 100%;
 }
 
 .input__radio {
   display: none;
-  opacity: 0;
+  opacity: 1;
 }
 
-.input__radio__circle {
-}
 .input__radio__label {
   display: block;
+  display: flex;
   height: 28px;
   margin: 4px 0px;
   text-align: left;
-  padding: 8px;
+  padding: 12px;
   border-radius: 6px;
   border: 1px solid transparent;
   transition: background-color 300ms, border-color 300ms;
@@ -240,6 +240,24 @@ h3 {
 .input__radio:checked + label {
   background: #d0f8ff;
   border-color: #00c9fa;
+}
+
+.input__radio + label .input__radio__circle {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  margin-right: 8px;
+  border-radius: 12px;
+  border: 2px solid #a7a7a7;
+  box-shadow: inset 0px 0px 0px 4px white;
+  box-sizing: border-box; /* Include padding and border in element's width and height */
+  transition: background-color 300ms, border-color 300ms;
+}
+
+.input__radio:checked + label .input__radio__circle {
+  background: #00335a;
+  border: 2px solid #00335a;
 }
 
 .input__radio span {
