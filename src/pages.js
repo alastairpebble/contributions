@@ -404,6 +404,7 @@ class Pages extends React.Component {
                   </label>
                 </div>
                 <h3 className="headline--three">
+                  <br />
                   *Your employer will match your contributions up to 5%
                   <br />
                   <br />
