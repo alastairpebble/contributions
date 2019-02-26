@@ -228,8 +228,11 @@ h3 {
   text-align: left;
   padding: 12px;
   border-radius: 6px;
-  border: 1px solid transparent;
+  border: 1px solid #d8d8d8;
   transition: background-color 300ms, border-color 300ms;
+  color: #003a5a;
+  font-weight: 700;
+  line-height: 24px;
 }
 .input__radio__label:hover {
   /*
