@@ -9,14 +9,15 @@ export const data = {
       pensions: {
         person: {
           ages: {
-            current: 35,
-            retirement: 67
+            now: 30,
+            retirement: 67,
+            until: 91
           },
           income: {
             salary: {
               annual: {
-                current: 20000,
-                inflation: 20000
+                current: 30000,
+                inflation: 30000
               }
             }
           },
@@ -36,27 +37,27 @@ export const data = {
         pot: {
           now: {
             contributions: {
-              personal: 0.05,
-              employer: 0.05
+              personal: 0.04,
+              employer: 0.04
             },
-            amount: "106310"
+            amount: 85050
           },
           future: {
             contributions: {
-              personal: 0.06,
+              personal: 0.05,
               employer: 0.05
             },
             amount: "0"
           },
           superfuture: {
             contributions: {
-              personal: 0.07,
+              personal: 0.06,
               employer: 0.05
             },
             amount: "0"
           },
           display: {
-            amount: "106,310"
+            amount: "85,050"
           }
         },
         contributions: {

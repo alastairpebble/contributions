@@ -101,6 +101,7 @@ class Pages extends React.Component {
     };
 
     console.log("swiper init not called");
+
     return (
       <div>
         <Swiper {...swiperparams} shouldSwiperUpdate>
@@ -303,63 +304,78 @@ class Pages extends React.Component {
                 </h3>
               </div>
               <div className="page__text__actions">
-                <label
-                  for="contrib1"
-                  className="input__radio"
-                  onClick={this.currentAmount}
-                >
+                <div className="input__radio__wrapper">
                   <input
+                    className="input__radio"
                     type="radio"
                     name="contrib"
                     id="contrib1"
                     value="0.05"
                   />
-                  <span>
-                    {Math.round(
-                      data.personas[0].pensions.pot.now.contributions.personal *
-                        100
-                    )}
-                    % (What you pay now)
-                  </span>
-                </label>
-                <label
-                  for="contrib2"
-                  className="input__radio"
-                  onClick={this.futureAmount}
-                >
+
+                  <label
+                    htmlFor="contrib1"
+                    className="input__radio__label"
+                    onClick={this.currentAmount}
+                  >
+                    <span>
+                      {Math.round(
+                        data.personas[0].pensions.pot.now.contributions
+                          .personal * 100
+                      )}
+                      % (What you pay now)
+                    </span>
+                  </label>
+                </div>
+                <div className="input__radio__wrapper">
                   <input
+                    className="input__radio"
                     type="radio"
                     name="contrib"
                     id="contrib2"
                     value="0.06"
                   />
-                  <span>
-                    {Math.round(
-                      data.personas[0].pensions.pot.future.contributions
-                        .personal * 100
-                    )}
-                    %
-                  </span>
-                </label>
-                <label
-                  for="contrib3"
-                  className="input__radio"
-                  onClick={this.superFutureAmount}
-                >
+
+                  <label
+                    htmlFor="contrib2"
+                    className="input__radio__label"
+                    onClick={this.futureAmount}
+                  >
+                    <span>
+                      {Math.round(
+                        data.personas[0].pensions.pot.future.contributions
+                          .personal * 100
+                      )}
+                      %
+                    </span>
+                  </label>
+                </div>
+                <div className="input__radio__wrapper">
                   <input
+                    className="input__radio"
                     type="radio"
                     name="contrib"
                     id="contrib3"
                     value="0.07"
                   />
-                  <span>
-                    {Math.round(
-                      data.personas[0].pensions.pot.superfuture.contributions
-                        .personal * 100
-                    )}
-                    %
-                  </span>
-                </label>
+
+                  <label
+                    htmlFor="contrib3"
+                    className="input__radio__label"
+                    onClick={this.superFutureAmount}
+                  >
+                    <span>
+                      {Math.round(
+                        data.personas[0].pensions.pot.superfuture.contributions
+                          .personal * 100
+                      )}
+                      %
+                    </span>
+                  </label>
+                </div>
+                <a className="button--primary" href="#slide7">
+                  Finish
+                </a>
               </div>
             </div>
             <div className="page__section page__visual">
@@ -373,10 +389,19 @@ class Pages extends React.Component {
           <div className="page" data-hash="slide7">
             <div className="page__section page__text">
               <div className="page__text__content">
-                <h2 className="headline--two">
+                <h2 className="headline--two headline--two--bold">
                   Please confirm the change to your regular pension contribution
                   amount
                 </h2>
+                <br />
+                <h3 className="headline--three">
+                  Your contributions:{" "}
+                  <span>{Math.round(this.props.calculate.percentage)}%</span>
+                </h3>
+                <h3 className="headline--three">
+                  Employer contributions:{" "}
+                  {Math.round(this.props.calculate.percentage_employer)}%
+                </h3>
               </div>
               <div className="page__text__actions">
                 <br />
@@ -386,18 +411,7 @@ class Pages extends React.Component {
               </div>
             </div>
             <div className="page__section page__visual">
-              <div className="page__visual__content">
-                <br />
-                <h1 className="headline--one">
-                  <b>New Contributions</b>
-                </h1>
-                <h3 className="headline--three">
-                  Your contributions:{" "}
-                  <span>{Math.round(this.props.calculate.percentage)}%</span>
-                  <br />
-                  Employer contributions: 5%
-                </h3>
-              </div>
+              <div className="page__visual__content page__visual--statement" />
             </div>
           </div>
         </Swiper>

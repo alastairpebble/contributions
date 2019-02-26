@@ -39,7 +39,8 @@ class PotText extends React.Component {
               "en"
             )}
           </b>{" "}
-          for <b>{this.props.calculate.income.for.years}</b> years
+          for <b>{this.props.calculate.income.for.years}</b> years and{" "}
+          <b>{this.props.calculate.income.for.months}</b> months
         </h3>
         <span style={{ opacity: 0 }}>
           ({Math.round(this.props.calculate.percentage)}%)
