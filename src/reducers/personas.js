@@ -20,7 +20,7 @@ export default function personas(state = 0, action) {
       return 0;
       break;
     case "NEWPERSONA":
-      console.log(personaB);
+      //console.log(personaB);
       return 1;
       break;
     default:

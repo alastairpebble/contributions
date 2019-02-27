@@ -84,9 +84,9 @@ class Pages extends React.Component {
   };
 
   dataFetched(data) {
-    console.log("Some external data");
-    console.log(JSON.stringify(data));
-    console.log(data.content.personas);
+    //console.log("Some external data");
+    //console.log(JSON.stringify(data));
+    //console.log(data.content.personas);
     this.setState({ data: data });
     //alert(JSON.stringify(data));
   }
@@ -99,8 +99,8 @@ class Pages extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.calculate !== this.props.calculate) {
-      console.log(prevProps.calculate);
-      console.log("did update");
+      //console.log(prevProps.calculate);
+      //console.log("did update");
     }
   }
   render() {
@@ -121,12 +121,12 @@ class Pages extends React.Component {
         console.log("onSlideChangeStart");
       },
       onInit: swiper => {
-        console.log("swiper init");
+        //console.log("swiper init");
         this.swiper = swiper;
       }
     };
 
-    console.log("swiper init not called");
+    //console.log("swiper init not called");
 
     return (
       <div>
