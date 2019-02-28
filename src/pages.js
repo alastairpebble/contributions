@@ -117,6 +117,7 @@ class Pages extends React.Component {
       },
       runCallbacksOnInit: true,
       shouldSwiperUpdate: true,
+      noSwiping: true,
       onSlideChangeStart: swiper => {
         console.log("onSlideChangeStart");
       },
@@ -321,87 +322,88 @@ class Pages extends React.Component {
 
           <div className="page" data-hash="slide6">
             <div className="page__section page__text">
-              <div className="page__text__content">
+              <div className="page__text__content" />
+              <div className="page__text__actions">
                 <h3 className="headline--two headline--two--bold">
                   Change your contribution level to see the effect on your
                   projected total
                 </h3>
-              </div>
-              <div className="page__text__actions">
-                <div className="input__radio__wrapper">
-                  <input
-                    className="input__radio"
-                    type="radio"
-                    name="contrib"
-                    id="contrib1"
-                    value="0.05"
-                    checked={this.state.contributions_radio.contrib1}
-                  />
+                <div>
+                  <div className="input__radio__wrapper">
+                    <input
+                      className="input__radio"
+                      type="radio"
+                      name="contrib"
+                      id="contrib1"
+                      value="0.05"
+                      checked={this.state.contributions_radio.contrib1}
+                    />
 
-                  <label
-                    htmlFor="contrib1"
-                    className="input__radio__label"
-                    onClick={this.currentAmount}
-                  >
-                    <span className="input__radio__circle" />
-                    <span>
-                      {Math.round(
-                        data.personas[0].pensions.pot.now.contributions
-                          .personal * 100
-                      )}
-                      % (What you pay now)
-                    </span>
-                  </label>
-                </div>
-                <div className="input__radio__wrapper">
-                  <input
-                    className="input__radio"
-                    type="radio"
-                    name="contrib"
-                    id="contrib2"
-                    value="0.06"
-                    checked={this.state.contributions_radio.contrib2}
-                  />
+                    <label
+                      htmlFor="contrib1"
+                      className="input__radio__label"
+                      onClick={this.currentAmount}
+                    >
+                      <span className="input__radio__circle" />
+                      <span>
+                        {Math.round(
+                          data.personas[0].pensions.pot.now.contributions
+                            .personal * 100
+                        )}
+                        % (What you pay now)
+                      </span>
+                    </label>
+                  </div>
+                  <div className="input__radio__wrapper">
+                    <input
+                      className="input__radio"
+                      type="radio"
+                      name="contrib"
+                      id="contrib2"
+                      value="0.06"
+                      checked={this.state.contributions_radio.contrib2}
+                    />
 
-                  <label
-                    htmlFor="contrib2"
-                    className="input__radio__label"
-                    onClick={this.futureAmount}
-                  >
-                    <span className="input__radio__circle" />
-                    <span>
-                      {Math.round(
-                        data.personas[0].pensions.pot.future.contributions
-                          .personal * 100
-                      )}
-                      %
-                    </span>
-                  </label>
-                </div>
-                <div className="input__radio__wrapper">
-                  <input
-                    className="input__radio"
-                    type="radio"
-                    name="contrib"
-                    id="contrib3"
-                    value="0.07"
-                    checked={this.state.contributions_radio.contrib3}
-                  />
+                    <label
+                      htmlFor="contrib2"
+                      className="input__radio__label"
+                      onClick={this.futureAmount}
+                    >
+                      <span className="input__radio__circle" />
+                      <span>
+                        {Math.round(
+                          data.personas[0].pensions.pot.future.contributions
+                            .personal * 100
+                        )}
+                        %
+                      </span>
+                    </label>
+                  </div>
+                  <div className="input__radio__wrapper">
+                    <input
+                      className="input__radio"
+                      type="radio"
+                      name="contrib"
+                      id="contrib3"
+                      value="0.07"
+                      checked={this.state.contributions_radio.contrib3}
+                    />
 
-                  <label
-                    htmlFor="contrib3"
-                    className="input__radio__label"
-                    onClick={this.superFutureAmount}
-                  >
-                    <span className="input__radio__circle" />
-                    <span>
-                      {Math.round(
-                        data.personas[0].pensions.pot.superfuture.contributions
-                          .personal * 100
-                      )}
-                      %
-                    </span>
-                  </label>
+                    <label
+                      htmlFor="contrib3"
+                      className="input__radio__label"
+                      onClick={this.superFutureAmount}
+                    >
+                      <span className="input__radio__circle" />
+                      <span>
+                        {Math.round(
+                          data.personas[0].pensions.pot.superfuture
+                            .contributions.personal * 100
+                        )}
+                        %
+                      </span>
+                    </label>
+                  </div>
                 </div>
                 <h3 className="headline--three">
                   <br />
