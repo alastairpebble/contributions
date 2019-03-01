@@ -31,6 +31,7 @@ body {
   border-radius: 6px;
   font-weight: 700;
   font-size: 16px;
+  border-style: none;
 }
 
 .button--primary:hover {
@@ -58,20 +59,20 @@ body {
 }
 
 .smartmodal {
-  position: absolute;
-  top: 0;
-  bottom: 0;
+  position: relative;
   width: 100%;
   height: 100%;
   background: white;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .smartmodal {
+    position: relatie;
     width: 75vw;
     margin-left: 12.5vw;
-    top: 20%;
+    top: 15%;
     height: 60vh;
+    height: 70%;
     border-radius: 6px;
     padding: 24px;
   }

@@ -15,6 +15,7 @@ import Pages from "./pages";
 import "./styles.css";
 import "./pages.css";
 import "./piesegments.css";
+import "./flickity.css";
 
 import reducer from "./reducers/index";
 
