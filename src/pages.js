@@ -453,9 +453,9 @@ class Pages extends React.Component {
             </div>
             <div className="page__text__actions">
               <br />
-              <a className="button--primary" onClick={this.futureAmount}>
-                Confirm
-              </a>
+              <button className="button--primary" onClick={this.myCustomNext}>
+                Continue
+              </button>
             </div>
           </div>
           <div className="page__section page__visual">

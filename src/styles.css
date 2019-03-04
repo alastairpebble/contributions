@@ -32,6 +32,7 @@ body {
   font-weight: 700;
   font-size: 16px;
   border-style: none;
+  min-height: 44px;
 }
 
 .button--primary:hover {
@@ -43,7 +44,7 @@ body {
   color: #fff;
 }
 
-@media (min-width: 768px), (orientation: landscape) {
+@media (min-width: 800px), (orientation: landscape) {
   .button--primary {
     display: inline-block;
   }
@@ -74,7 +75,7 @@ body {
     height: 60vh;
     height: 70%;
     border-radius: 6px;
-    padding: 24px;
+    padding: 32px;
   }
   .page {
     min-height: 50vh;
