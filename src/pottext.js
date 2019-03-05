@@ -32,7 +32,7 @@ class PotText extends React.Component {
           £{Math.round(this.props.calculate.number).toLocaleString("en")}
         </h1>
         <h3 className="headline--three">
-          Giving a monthly income of{" "}
+          Giving you a monthly income of{" "}
           <b>
             £
             {Math.round(this.props.calculate.income.monthly).toLocaleString(

@@ -209,7 +209,7 @@ class Pages extends React.Component {
             <div className="page__text__content">
               <h3 className="headline--two">
                 Of which <span className="government">£25</span> is actually
-                contributed by the government in the form of a tax rebate.
+                contributed by the government in the form of a tax relief.
               </h3>
             </div>
             <div className="page__text__actions">
@@ -315,7 +315,7 @@ class Pages extends React.Component {
                 <b>Did you know?</b>
               </h3>
               <h3 className="headline--two">
-                Small increases to these contributions will make a big
+                A small increase to your contribution could make a big
                 difference to your retirement income.
               </h3>
             </div>
@@ -437,25 +437,48 @@ class Pages extends React.Component {
         <div className="page" data-hash="slide7">
           <div className="page__section page__text">
             <div className="page__text__content">
-              <h2 className="headline--two headline--two--bold">
-                Please confirm the change to your regular pension contribution
-                amount
-              </h2>
-              <br />
-              <h3 className="headline--three">
-                Your contributions:{" "}
-                <span>{Math.round(this.props.calculate.percentage)}%</span>
-              </h3>
-              <h3 className="headline--three">
-                Employer contributions:{" "}
-                {Math.round(this.props.calculate.percentage_employer)}%
-              </h3>
+              {this.props.calculate.percentage > 4 && (
+                <div>
+                  <h2>You've changed your contributions.</h2>
+                  <h2 className="headline--two headline--two--bold">
+                    Check you’re happy with the change to your contributions.
+                  </h2>
+                  <br />
+                  <h3 className="headline--three">
+                    Your new contribution:{" "}
+                    <span>{Math.round(this.props.calculate.percentage)}%</span>
+                  </h3>
+                  <h3 className="headline--three">
+                    Your employer's new contribution:{" "}
+                    {Math.round(this.props.calculate.percentage_employer)}%
+                  </h3>
+                </div>
+              )}
+              {this.props.calculate.percentage <= 4 && (
+                <h2>Your contribution value hasn't changed.</h2>
+              )}
             </div>
             <div className="page__text__actions">
               <br />
               <button className="button--primary" onClick={this.myCustomNext}>
                 Continue
               </button>
+            </div>
+          </div>
+          <div className="page__section page__visual">
+            <div className="page__visual__content page__visual--statement" />
+          </div>
+        </div>
+
+        <div className="page" data-hash="slide8">
+          <div className="page__section page__text">
+            <div className="page__text__content">
+              <div>
+                <h2>Thanks, that's the end of the test.</h2>
+                <h2 className="headline--two headline--two--bold">
+                  You can end your session on usertesting.com
+                </h2>
+              </div>
             </div>
           </div>
           <div className="page__section page__visual">
