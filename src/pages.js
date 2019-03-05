@@ -112,31 +112,6 @@ class Pages extends React.Component {
     this.flkty.next();
   };
   render() {
-    const swiperparams = {
-      preventClicks: false,
-      hashNavigation: {
-        replaceState: true,
-        watchState: true
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true
-      },
-      runCallbacksOnInit: true,
-      shouldSwiperUpdate: true,
-      noSwiping: true,
-      onSlideChangeStart: swiper => {
-        console.log("onSlideChangeStart");
-      },
-      onInit: swiper => {
-        //console.log("swiper init");
-        this.swiper = swiper;
-      }
-    };
-
-    //console.log("swiper init not called");
-
     const FlickityOptions = {
       dragThreshold: 25
     };
@@ -360,7 +335,12 @@ class Pages extends React.Component {
                         data.personas[0].pensions.pot.now.contributions
                           .personal * 100
                       )}
-                      % (What you pay now)
+                      % - &pound;
+                      {Math.round(
+                        data.personas[0].pensions.pot.now.contributions.amount
+                          .personal
+                      )}{" "}
+                      (What you pay now)
                     </span>
                   </label>
                 </div>
@@ -385,7 +365,19 @@ class Pages extends React.Component {
                         data.personas[0].pensions.pot.future.contributions
                           .personal * 100
                       )}
-                      %
+                      % - &pound;
+                      {Math.round(
+                        data.personas[0].pensions.pot.future.contributions
+                          .amount.personal
+                      )}{" "}
+                      (+&pound;
+                      {Math.round(
+                        data.personas[0].pensions.pot.future.contributions
+                          .amount.personal -
+                          data.personas[0].pensions.pot.now.contributions.amount
+                            .personal
+                      )}
+                      )
                     </span>
                   </label>
                 </div>
@@ -410,7 +402,19 @@ class Pages extends React.Component {
                         data.personas[0].pensions.pot.superfuture.contributions
                           .personal * 100
                       )}
-                      %
+                      % - &pound;
+                      {Math.round(
+                        data.personas[0].pensions.pot.superfuture.contributions
+                          .amount.personal
+                      )}{" "}
+                      (+&pound;
+                      {Math.round(
+                        data.personas[0].pensions.pot.superfuture.contributions
+                          .amount.personal -
+                          data.personas[0].pensions.pot.now.contributions.amount
+                            .personal
+                      )}
+                      )
                     </span>
                   </label>
                 </div>

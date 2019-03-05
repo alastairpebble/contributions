@@ -11,6 +11,22 @@ function calculateAccumulation(time) {
   data.personas[0].pensions.person.income.salary.annual.inflation =
     data.personas[0].pensions.person.income.salary.annual.current;
 
+  data.personas[0].pensions.pot.now.contributions.amount.personal = Math.round(
+    (data.personas[0].pensions.person.income.salary.annual.current *
+      data.personas[0].pensions.pot.now.contributions.personal) /
+      12
+  );
+  data.personas[0].pensions.pot.future.contributions.amount.personal = Math.round(
+    (data.personas[0].pensions.person.income.salary.annual.current *
+      data.personas[0].pensions.pot.future.contributions.personal) /
+      12
+  );
+  data.personas[0].pensions.pot.superfuture.contributions.amount.personal = Math.round(
+    (data.personas[0].pensions.person.income.salary.annual.current *
+      data.personas[0].pensions.pot.superfuture.contributions.personal) /
+      12
+  );
+
   switch (time) {
     case "now":
       personContributionsPersonal = parseFloat(

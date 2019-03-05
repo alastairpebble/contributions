@@ -38,21 +38,33 @@ export const data = {
           now: {
             contributions: {
               personal: 0.04,
-              employer: 0.04
+              employer: 0.04,
+              amount: {
+                personal: 101,
+                employer: 0
+              }
             },
             amount: 85050
           },
           future: {
             contributions: {
               personal: 0.05,
-              employer: 0.05
+              employer: 0.05,
+              amount: {
+                personal: 202,
+                employer: 0
+              }
             },
             amount: "0"
           },
           superfuture: {
             contributions: {
               personal: 0.06,
-              employer: 0.05
+              employer: 0.05,
+              amount: {
+                personal: 303,
+                employer: 0
+              }
             },
             amount: "0"
           },
