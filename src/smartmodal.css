@@ -1,0 +1,14 @@
+.smartmodal__close {
+  width: 48px;
+  height: 48px;
+  color: transparent;
+  background: url(/baseline-close-24px.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  cursor: pointer;
+}

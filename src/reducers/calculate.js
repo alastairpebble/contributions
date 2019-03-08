@@ -50,7 +50,13 @@ function calculateAccumulation(time) {
       break;
   }
 
+  let todaysMoneyReducer =
+    1 + data.personas[0].pensions.rates.government.inflation;
+  let todaysMoneyReducerTime = todaysMoneyReducer;
+
   for (var i = personAgeCurrent; i < personAgeRetirement; i++) {
+    todaysMoneyReducerTime = todaysMoneyReducerTime * todaysMoneyReducer;
+    console.log("todaysMoneyReducerTime" + todaysMoneyReducerTime);
     pot +=
       parseInt(
         data.personas[0].pensions.person.income.salary.annual.inflation
@@ -67,26 +73,29 @@ function calculateAccumulation(time) {
       data.personas[0].pensions.person.income.salary.annual.inflation * 0.028;
   }
 
-  pot = Math.ceil(pot / 10) * 10;
+  let potToday = pot * todaysMoneyReducerTime;
+  //pot = Math.ceil(pot / 10) * 10;
+
+  pot = Math.ceil(potToday / 1000) * 1000;
 
   if (time == "now") {
     return {
       pot: pot,
-      income: data.personas[0].pensions.person.income.salary.annual.inflation
+      income: data.personas[0].pensions.person.income.salary.annual.current
     };
   }
 
   if (time == "future") {
     return {
       pot: pot,
-      income: data.personas[0].pensions.person.income.salary.annual.inflation
+      income: data.personas[0].pensions.person.income.salary.annual.current
     };
   }
 
   if (time == "superfuture") {
     return {
       pot: pot,
-      income: data.personas[0].pensions.person.income.salary.annual.inflation
+      income: data.personas[0].pensions.person.income.salary.annual.current
     };
   }
 }
@@ -98,6 +107,19 @@ function calculateDecumulation(accumulation) {
   var monthlyIncomeNeeded = annualIncomeNeeded / 12;
   var forYears = 0;
   var forMonths = 0;
+
+  var annuity = potSize * 0.05;
+  var annuityMonthly = annuity / 12;
+  annuityMonthly = Math.ceil(annuityMonthly / 10) * 10;
+
+  return {
+    monthly: Math.round(annuityMonthly),
+    for: {
+      years: 25,
+      months: 0,
+      monthsRemainder: 0
+    }
+  };
 
   for (
     let year = data.personas[0].pensions.person.ages.retirement;

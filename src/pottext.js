@@ -41,10 +41,13 @@ class PotText extends React.Component {
               "en"
             )}
           </b>{" "}
+          for life
           <br />
-          for {this.props.calculate.income.for.years} years {monthString}
+          <div className="hide">
+            for {this.props.calculate.income.for.years} years {monthString}
+          </div>
         </h3>
-        <div className="button--link p-2">How is this calculated?</div>
+        <div className="button--link p-2">*How is this calculated?</div>
       </div>
     );
   }

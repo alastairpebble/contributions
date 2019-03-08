@@ -487,12 +487,12 @@ h3 {
   }
   */
   #celebration-slide--slide6 .page__content {
-    background: #fff;
+    //background: #fff;
     border-radius: 6px;
   }
 
   #celebration-slide--slide7 .page__content {
-    background: #fff;
+    //background: #fff;
     border-radius: 6px;
   }
 
@@ -516,6 +516,32 @@ h3 {
 }
 
 .counter {
-  background: #fff;
+  //background: #fff;
   border-radius: 6px;
+}
+
+.slide__takeover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: red;
+  z-index: 10;
+  padding: 16px;
+}
+
+.page__text__takeover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: red;
+  z-index: 10;
+  padding: 16px;
+  display: none;
+}
+.slide__takeover--hidden {
+  display: none;
 }

@@ -28,7 +28,7 @@ export const data = {
             inflation: -0.028
           },
           pension: {
-            interest: 0.04,
+            interest: 0.06,
             fees: {
               annual: -0.0075
             }

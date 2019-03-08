@@ -408,6 +408,7 @@ class Pages extends React.Component {
         </div>
 
         <div id="celebration-slide--slide6" className="page" data-hash="slide6">
+          <div className="slide__takeover slide__takeover--hidden" />
           <div className="page__header">
             <p className="headline--two headline--two--small headline--two--bold hidden-md-down">
               Change your contribution to see the effect on your Projected Total
@@ -415,6 +416,7 @@ class Pages extends React.Component {
           </div>
           <div className="page__content">
             <div className="page__section page__text p-4">
+              <div className="page__text__takeover" />
               <div className="page__text__content p-0">
                 <p className="headline--three headline--three--bold hidden-md-up">
                   Change your contribution to see the effect on your Projected
@@ -545,8 +547,7 @@ class Pages extends React.Component {
                   </div>
                 </div>
                 <h3 className="headline--three mb-0">
-                  *Your employer will match your contributions up to 5%
-                  <br />
+                  Your employer will match your contributions up to 5%
                 </h3>
               </div>
             </div>

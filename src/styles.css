@@ -8,6 +8,9 @@ body {
   margin: 0;
   background: var(--main-bg-color);
 }
+.hide {
+  display: none;
+}
 .SmartNavTop {
   background: #ffffff;
   height: var(--smartnav-top-height);
