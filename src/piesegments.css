@@ -75,7 +75,7 @@
 }
 
 .page__visual__pie--translate-employer {
-  transform: translate(4px, -4px);
+  transform: translate(4px, -5px);
 }
 
 .page__visual__pie--rotate-personal {
@@ -89,7 +89,7 @@
 }
 
 .page__visual__pie--rotate-tax {
-  transform: rotate(-36deg) translate(1px, -3px);
+  transform: rotate(-45deg) translate(3px, -3px);
   transform-origin: center;
 }
 

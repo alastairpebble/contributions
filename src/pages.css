@@ -391,9 +391,9 @@ h3 {
   margin-right: 8px;
   border-radius: 12px;
   transition: background-color 200ms, border-color 200ms;
-  background: #fff;
+  background: #f7f7f7;
   border: 2px solid #a7a7a7;
-  box-shadow: inset 0px 0px 0px 4px white;
+  box-shadow: inset 0px 0px 0px 4px #f7f7f7;
 }
 
 .input__radio__circle:hover {

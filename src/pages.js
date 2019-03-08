@@ -213,13 +213,13 @@ class Pages extends React.Component {
                     <div className="page__visual__pie page__visual__pie--translate-employer">
                       <PieSegments
                         percentage="0.5"
-                        color="#50E2C0"
-                        strokeColor="#50E2C0"
+                        color="#DCF3F7"
+                        strokeColor="#ffffff"
                       />
                     </div>
                   </div>
                   <div className="page__visual__pie__wrapper">
-                    <div className="page__visual__pie page__visual__pie--rotate-personal page__visual__pie--rotate-personal--out">
+                    <div className="page__visual__pie page__visual__pie--rotate-personal">
                       <PieSegments
                         percentage="0.5"
                         color="#FF9C36"
@@ -275,15 +275,15 @@ class Pages extends React.Component {
                     <div className="page__visual__pie page__visual__pie--translate-employer">
                       <PieSegments
                         percentage="0.5"
-                        color="#50E2C0"
-                        strokeColor="#50E2C0"
+                        color="#DCF3F7"
+                        strokeColor="#ffffff"
                       />
                     </div>
                   </div>
                   <div className="page__visual__pie__wrapper">
                     <div className="page__visual__pie page__visual__pie--rotate-personal">
                       <PieSegments
-                        percentage="0.395"
+                        percentage="0.370"
                         color="#FF9C36"
                         strokeColor="#FF9C36"
                       />
@@ -292,7 +292,7 @@ class Pages extends React.Component {
                   <div className="page__visual__pie__wrapper">
                     <div className="page__visual__pie page__visual__pie--rotate-tax">
                       <PieSegments
-                        percentage="0.1"
+                        percentage="0.125"
                         color="#FF9CAD"
                         strokeColor="#FF9CAD"
                       />
@@ -352,7 +352,7 @@ class Pages extends React.Component {
                   <div className="page__visual__pie__wrapper">
                     <div className="page__visual__pie page__visual__pie--rotate-personal">
                       <PieSegments
-                        percentage="0.395"
+                        percentage="0.370"
                         color="#FF9C36"
                         strokeColor="#FF9C36"
                       />
@@ -361,7 +361,7 @@ class Pages extends React.Component {
                   <div className="page__visual__pie__wrapper">
                     <div className="page__visual__pie page__visual__pie--rotate-tax">
                       <PieSegments
-                        percentage="0.1"
+                        percentage="0.125"
                         color="#FF9CAD"
                         strokeColor="#FF9CAD"
                       />
