@@ -27,6 +27,9 @@ class Pages extends React.Component {
     this.state = {
       calculate: 0,
       data: null,
+      currentPage: {
+        index: 0
+      },
       contributions_radio: {
         contrib1: true,
         contrib2: false,
@@ -117,6 +120,11 @@ class Pages extends React.Component {
   componentDidMount = () => {
     // You can register events in componentDidMount hook
     this.flkty.on("settle", () => {
+      this.setState({
+        currentPage: {
+          index: this.flkty.selectedIndex
+        }
+      });
       console.log(`current index is ${this.flkty.selectedIndex}`);
     });
   };
@@ -144,10 +152,17 @@ class Pages extends React.Component {
           <div className="page__header" />
           <div className="page__content">
             <div className="page__section page__text">
-              <div className="page__text__content">
+              <div className="page__text__content p-0">
                 <h3 className="headline--two">
-                  <b>£200</b> has been added to your pension. Though, it
-                  actually cost you much less.
+                  <b>
+                    £
+                    {Math.round(
+                      data.personas[0].pensions.pot.now.contributions.amount
+                        .personal * 2
+                    )}
+                  </b>{" "}
+                  has been added to your pension. Though, it actually cost you
+                  much less.
                 </h3>
                 <h3 className="headline--two mb-0">Let’s find out how.</h3>
               </div>
@@ -171,7 +186,14 @@ class Pages extends React.Component {
             <div className="page__section page__text">
               <div className="page__text__content">
                 <h3 className="headline--two mb-0">
-                  <span className="personal">£100</span> came out of your pay.
+                  <span className="personal">
+                    £
+                    {Math.round(
+                      data.personas[0].pensions.pot.now.contributions.amount
+                        .personal
+                    )}
+                  </span>{" "}
+                  came out of your pay.
                 </h3>
               </div>
             </div>
@@ -179,7 +201,13 @@ class Pages extends React.Component {
               <div className="page__visual__content">
                 <div className="page__visual__pie__all__wrapper">
                   <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--personal">
-                    <div className="page__visual__pie__label">£100</div>
+                    <div className="page__visual__pie__label">
+                      £
+                      {Math.round(
+                        data.personas[0].pensions.pot.now.contributions.amount
+                          .personal
+                      )}
+                    </div>
                   </div>
                   <div className="page__visual__pie__wrapper">
                     <div className="page__visual__pie page__visual__pie--translate-employer">
@@ -191,7 +219,7 @@ class Pages extends React.Component {
                     </div>
                   </div>
                   <div className="page__visual__pie__wrapper">
-                    <div className="page__visual__pie page__visual__pie--rotate-personal">
+                    <div className="page__visual__pie page__visual__pie--rotate-personal page__visual__pie--rotate-personal--out">
                       <PieSegments
                         percentage="0.5"
                         color="#FF9C36"
@@ -218,8 +246,16 @@ class Pages extends React.Component {
             <div className="page__section page__text">
               <div className="page__text__content">
                 <h3 className="headline--two mb-0">
-                  Of which <span className="government">£25</span> is actually
-                  contributed by the government in the form of a tax relief.
+                  Of which{" "}
+                  <span className="government">
+                    £
+                    {Math.round(
+                      data.personas[0].pensions.pot.now.contributions.amount
+                        .personal / 4
+                    )}
+                  </span>{" "}
+                  is actually contributed by the government in the form of a tax
+                  relief.
                 </h3>
               </div>
             </div>
@@ -227,7 +263,13 @@ class Pages extends React.Component {
               <div className="page__visual__content">
                 <div className="page__visual__pie__all__wrapper">
                   <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--tax">
-                    <div className="page__visual__pie__label">£25</div>
+                    <div className="page__visual__pie__label">
+                      £
+                      {Math.round(
+                        data.personas[0].pensions.pot.now.contributions.amount
+                          .personal / 4
+                      )}
+                    </div>
                   </div>
                   <div className="page__visual__pie__wrapper">
                     <div className="page__visual__pie page__visual__pie--translate-employer">
@@ -276,7 +318,13 @@ class Pages extends React.Component {
               <div className="page__text__content">
                 <h3 className="headline--two mb-0">
                   Your employer put in the remaining{" "}
-                  <span className="employer">£100</span>
+                  <span className="employer">
+                    £
+                    {Math.round(
+                      data.personas[0].pensions.pot.now.contributions.amount
+                        .personal
+                    )}
+                  </span>
                 </h3>
               </div>
             </div>
@@ -284,7 +332,13 @@ class Pages extends React.Component {
               <div className="page__visual__content">
                 <div className="page__visual__pie__all__wrapper">
                   <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--employer">
-                    <div className="page__visual__pie__label">£100</div>
+                    <div className="page__visual__pie__label">
+                      £
+                      {Math.round(
+                        data.personas[0].pensions.pot.now.contributions.amount
+                          .personal
+                      )}
+                    </div>
                   </div>
                   <div className="page__visual__pie__wrapper">
                     <div className="page__visual__pie page__visual__pie--translate-employer">
@@ -330,7 +384,7 @@ class Pages extends React.Component {
           <div className="page__header" />
           <div className="page__content">
             <div className="page__section page__text">
-              <div className="page__text__content">
+              <div className="page__text__content p-0">
                 <h3 className="headline--two headline--two--bold">
                   <b>Did you know?</b>
                 </h3>
@@ -353,14 +407,18 @@ class Pages extends React.Component {
           </div>
         </div>
 
-        <div className="page" data-hash="slide6">
-          <div className="page__header" />
+        <div id="celebration-slide--slide6" className="page" data-hash="slide6">
+          <div className="page__header">
+            <p className="headline--two headline--two--small headline--two--bold hidden-md-down">
+              Change your contribution to see the effect on your Projected Total
+            </p>
+          </div>
           <div className="page__content">
             <div className="page__section page__text p-4">
               <div className="page__text__content p-0">
-                <p className="headline--three headline--three--bold">
-                  Change your contribution to see the effect on your projected
-                  total
+                <p className="headline--three headline--three--bold hidden-md-up">
+                  Change your contribution to see the effect on your Projected
+                  Total
                 </p>
                 <div className="input__radio__group">
                   <div className="input__radio__wrapper input__radio__wrapper--small mr-1">
@@ -486,7 +544,7 @@ class Pages extends React.Component {
                     </label>
                   </div>
                 </div>
-                <h3 className="headline--three">
+                <h3 className="headline--three mb-0">
                   *Your employer will match your contributions up to 5%
                   <br />
                 </h3>
@@ -509,12 +567,21 @@ class Pages extends React.Component {
         </div>
 
         <div id="celebration-slide--slide7" className="page" data-hash="slide7">
-          <div className="page__header" />
+          <div className="page__header">
+            {this.props.calculate.percentage > 4 && (
+              <p className="headline--two headline--two--small headline--two--bold hidden-md-down" />
+            )}
+            {this.props.calculate.percentage > 4 && (
+              <p className="headline--two headline--two--small headline--two--bold hidden-md-down">
+                Check you’re happy with the change to your contributions.
+              </p>
+            )}
+          </div>
           <div className="page__content">
             <div className="page__section page__text p-4">
               {this.props.calculate.percentage > 4 && (
                 <div className="page__text__content p-0">
-                  <h2 className="headline--three headline--three--bold">
+                  <h2 className="headline--three headline--three--bold  hidden-md-up">
                     Check you’re happy with the change to your contributions.
                   </h2>
                   <div className="input__radio__group input__radio__group--vertical">
@@ -535,14 +602,11 @@ class Pages extends React.Component {
                       >
                         <span className="input__radio__circle" />
                         <div>
-                          <span className="input__radio__label__header">
-                            Yes
-                          </span>
-                          <br />
-                          <span className="input__radio__label__body">
+                          <div className="input__radio__label__header">Yes</div>
+                          <div className="input__radio__label__body m-0 pl-1">
                             I would like to increase my contributions to{" "}
                             {Math.round(this.props.calculate.percentage)}%.
-                          </span>
+                          </div>
                         </div>
                       </label>
                     </div>
@@ -563,14 +627,11 @@ class Pages extends React.Component {
                       >
                         <span className="input__radio__circle" />
                         <div>
-                          <span className="input__radio__label__header">
-                            No
-                          </span>
-                          <br />
-                          <span className="input__radio__label__body">
+                          <div className="input__radio__label__header">No</div>
+                          <div className="input__radio__label__body m-0 pl-1">
                             I would like to keep my contributions the same for
                             now.
-                          </span>
+                          </div>
                         </div>
                       </label>
                     </div>
@@ -591,7 +652,7 @@ class Pages extends React.Component {
                 {this.props.calculate.percentage > 4 && (
                   <div>
                     <h2 className="headline--three headline--three--bold mb-0">
-                      Your contributions have changed.
+                      You've changed your contributions.
                     </h2>
                     <br />
                     <h3 className="headline--three">

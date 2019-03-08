@@ -22,16 +22,16 @@
 
 .page__visual__pie__label__wrapper {
   background: white;
-  width: 28%;
+  width: 30%;
   height: 0%;
-  padding-bottom: 28%;
+  padding-bottom: 30%;
   position: absolute;
   border-radius: 100%;
   z-index: 100;
   display: flex;
   align-items: center;
   text-align: center;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.28);
+  //box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.28);
 }
 
 .page__visual__pie__label {
@@ -43,7 +43,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   height: 100%;
   position: absolute;
@@ -51,6 +51,7 @@
   bottom: 0;
   display: flex;
   width: 100%;
+  color: #002c53;
 }
 
 .page__visual__pie {
@@ -78,7 +79,12 @@
 }
 
 .page__visual__pie--rotate-personal {
-  transform: rotate(180deg) translate(0px, 1px);
+  transform: rotate(180deg) translate(-2px, 2px);
+  transform-origin: center;
+}
+
+.page__visual__pie--rotate-personal--out {
+  transform: rotate(180deg) translate(-2px, 2px);
   transform-origin: center;
 }
 
@@ -92,7 +98,7 @@
   left: 10%;
 }
 .page__visual__pie__label__wrapper--tax {
-  top: 5%;
+  top: -5%;
   left: 10%;
 }
 .page__visual__pie__label__wrapper--employer {
@@ -121,7 +127,7 @@
     left: 5%;
   }
   .page__visual__pie__label__wrapper--tax {
-    top: 5%;
+    top: -10%;
     left: 5%;
   }
   .page__visual__pie__label__wrapper--employer {

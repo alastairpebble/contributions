@@ -30,10 +30,10 @@ class PotText extends React.Component {
     return (
       <div className="counter">
         <h1 className="headline--two mb-0">Projected Total*</h1>
-        <h1 className="headline--money">
+        <h1 className="headline--money mb-0">
           £{Math.round(this.props.calculate.number).toLocaleString("en")}
         </h1>
-        <h3 className="headline--three">
+        <h3 className="headline--three mb-0 p-4">
           Giving you a monthly income of{" "}
           <b>
             £
@@ -44,9 +44,7 @@ class PotText extends React.Component {
           <br />
           for {this.props.calculate.income.for.years} years {monthString}
         </h3>
-        <span style={{ opacity: 0 }}>
-          ({Math.round(this.props.calculate.percentage)}%)
-        </span>
+        <div className="button--link p-2">How is this calculated?</div>
       </div>
     );
   }
