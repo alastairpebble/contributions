@@ -341,7 +341,7 @@ class Pages extends React.Component {
                   total
                 </p>
                 <div className="input__radio__group">
-                  <div className="input__radio__wrapper input__radio__wrapper--small mr-2">
+                  <div className="input__radio__wrapper input__radio__wrapper--small mr-1">
                     <input
                       className="input__radio"
                       type="radio"
@@ -377,7 +377,7 @@ class Pages extends React.Component {
                       </div>
                     </label>
                   </div>
-                  <div className="input__radio__wrapper input__radio__wrapper--small mr-2">
+                  <div className="input__radio__wrapper input__radio__wrapper--small mr-1">
                     <input
                       className="input__radio"
                       type="radio"
@@ -493,8 +493,7 @@ class Pages extends React.Component {
               <div className="page__text__content">
                 {this.props.calculate.percentage > 4 && (
                   <div>
-                    <h2>You've changed your contributions.</h2>
-                    <h2 className="headline--two headline--two--bold">
+                    <h2 className="headline--three headline--three--bold">
                       Check you’re happy with the change to your contributions.
                     </h2>
                     <br />
