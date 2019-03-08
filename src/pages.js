@@ -119,374 +119,436 @@ class Pages extends React.Component {
     return (
       <Flickity flickityRef={c => (this.flkty = c)} options={FlickityOptions}>
         <div className="page">
-          <div className="page__section page__text">
-            <div className="page__text__content">
-              <h3 className="headline--two">
-                <b>£200</b> has been added to your pension. Though, it actually
-                cost you much less.
-              </h3>
-              <h3 className="headline--two">Let’s find out how.</h3>
+          <div className="page__header" />
+          <div className="page__content">
+            <div className="page__section page__text">
+              <div className="page__text__content">
+                <h3 className="headline--two">
+                  <b>£200</b> has been added to your pension. Though, it
+                  actually cost you much less.
+                </h3>
+                <h3 className="headline--two mb-0">Let’s find out how.</h3>
+              </div>
             </div>
-            <div className="page__text__actions">
+            <div className="page__section page__visual">
+              <div className="page__visual__content page__visual--binoculars" />
+            </div>
+          </div>
+          <div className="page__actions">
+            <div className="page__actions__content">
               <button className="button--primary" onClick={this.myCustomNext}>
                 Continue
               </button>
             </div>
-          </div>
-          <div className="page__section page__visual">
-            <div className="page__visual__content page__visual--binoculars" />
           </div>
         </div>
 
         <div className="page" data-hash="slide2">
-          <div className="page__section page__text">
-            <div className="page__text__content">
-              <h3 className="headline--two">
-                <span className="personal">£100</span> came out of your pay.
-              </h3>
+          <div className="page__header" />
+          <div className="page__content">
+            <div className="page__section page__text">
+              <div className="page__text__content">
+                <h3 className="headline--two mb-0">
+                  <span className="personal">£100</span> came out of your pay.
+                </h3>
+              </div>
             </div>
-            <div className="page__text__actions">
-              <button className="button--primary" onClick={this.myCustomNext}>
-                Continue
-              </button>
-            </div>
-          </div>
-          <div className="page__section page__visual page__visual--including-pie">
-            <div className="page__visual__content">
-              <div className="page__visual__pie__all__wrapper">
-                <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--personal">
-                  <div className="page__visual__pie__label">£100</div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--translate-employer">
-                    <PieSegments
-                      percentage="0.5"
-                      color="#50E2C0"
-                      strokeColor="#50E2C0"
-                    />
+            <div className="page__section page__visual page__visual--including-pie">
+              <div className="page__visual__content">
+                <div className="page__visual__pie__all__wrapper">
+                  <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--personal">
+                    <div className="page__visual__pie__label">£100</div>
                   </div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--rotate-personal">
-                    <PieSegments
-                      percentage="0.5"
-                      color="#FF9C36"
-                      strokeColor="#FF9C36"
-                    />
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--translate-employer">
+                      <PieSegments
+                        percentage="0.5"
+                        color="#50E2C0"
+                        strokeColor="#50E2C0"
+                      />
+                    </div>
+                  </div>
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--rotate-personal">
+                      <PieSegments
+                        percentage="0.5"
+                        color="#FF9C36"
+                        strokeColor="#FF9C36"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="page__actions">
+            <div className="page__actions__content">
+              <button className="button--primary" onClick={this.myCustomNext}>
+                Continue
+              </button>
             </div>
           </div>
         </div>
+
         <div className="page" data-hash="slide3">
-          <div className="page__section page__text">
-            <div className="page__text__content">
-              <h3 className="headline--two">
-                Of which <span className="government">£25</span> is actually
-                contributed by the government in the form of a tax relief.
-              </h3>
+          <div className="page__header" />
+          <div className="page__content">
+            <div className="page__section page__text">
+              <div className="page__text__content">
+                <h3 className="headline--two mb-0">
+                  Of which <span className="government">£25</span> is actually
+                  contributed by the government in the form of a tax relief.
+                </h3>
+              </div>
             </div>
-            <div className="page__text__actions">
-              <button className="button--primary" onClick={this.myCustomNext}>
-                Continue
-              </button>
-            </div>
-          </div>
-          <div className="page__section page__visual page__visual--including-pie ">
-            <div className="page__visual__content">
-              <div className="page__visual__pie__all__wrapper">
-                <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--tax">
-                  <div className="page__visual__pie__label">£25</div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--translate-employer">
-                    <PieSegments
-                      percentage="0.5"
-                      color="#50E2C0"
-                      strokeColor="#50E2C0"
-                    />
+            <div className="page__section page__visual page__visual--including-pie ">
+              <div className="page__visual__content">
+                <div className="page__visual__pie__all__wrapper">
+                  <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--tax">
+                    <div className="page__visual__pie__label">£25</div>
                   </div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--rotate-personal">
-                    <PieSegments
-                      percentage="0.395"
-                      color="#FF9C36"
-                      strokeColor="#FF9C36"
-                    />
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--translate-employer">
+                      <PieSegments
+                        percentage="0.5"
+                        color="#50E2C0"
+                        strokeColor="#50E2C0"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--rotate-tax">
-                    <PieSegments
-                      percentage="0.1"
-                      color="#FF9CAD"
-                      strokeColor="#FF9CAD"
-                    />
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--rotate-personal">
+                      <PieSegments
+                        percentage="0.395"
+                        color="#FF9C36"
+                        strokeColor="#FF9C36"
+                      />
+                    </div>
+                  </div>
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--rotate-tax">
+                      <PieSegments
+                        percentage="0.1"
+                        color="#FF9CAD"
+                        strokeColor="#FF9CAD"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="page__actions">
+            <div className="page__actions__content">
+              <button className="button--primary" onClick={this.myCustomNext}>
+                Continue
+              </button>
             </div>
           </div>
         </div>
 
         <div className="page" data-hash="slide4">
-          <div className="page__section page__text">
-            <div className="page__text__content">
-              <h3 className="headline--two">
-                Your employer put in the remaining{" "}
-                <span className="employer">£100</span>
-              </h3>
+          <div className="page__header" />
+          <div className="page__content">
+            <div className="page__section page__text">
+              <div className="page__text__content">
+                <h3 className="headline--two mb-0">
+                  Your employer put in the remaining{" "}
+                  <span className="employer">£100</span>
+                </h3>
+              </div>
             </div>
-            <div className="page__text__actions">
-              <button className="button--primary" onClick={this.myCustomNext}>
-                Continue
-              </button>
-            </div>
-          </div>
-          <div className="page__section page__visual page__visual--including-pie">
-            <div className="page__visual__content">
-              <div className="page__visual__pie__all__wrapper">
-                <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--employer">
-                  <div className="page__visual__pie__label">£100</div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--translate-employer">
-                    <PieSegments
-                      percentage="0.5"
-                      color="#50E2C0"
-                      strokeColor="#50E2C0"
-                    />
+            <div className="page__section page__visual page__visual--including-pie">
+              <div className="page__visual__content">
+                <div className="page__visual__pie__all__wrapper">
+                  <div className="page__visual__pie__label__wrapper page__visual__pie__label__wrapper--employer">
+                    <div className="page__visual__pie__label">£100</div>
                   </div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--rotate-personal">
-                    <PieSegments
-                      percentage="0.395"
-                      color="#FF9C36"
-                      strokeColor="#FF9C36"
-                    />
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--translate-employer">
+                      <PieSegments
+                        percentage="0.5"
+                        color="#50E2C0"
+                        strokeColor="#50E2C0"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="page__visual__pie__wrapper">
-                  <div className="page__visual__pie page__visual__pie--rotate-tax">
-                    <PieSegments
-                      percentage="0.1"
-                      color="#FF9CAD"
-                      strokeColor="#FF9CAD"
-                    />
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--rotate-personal">
+                      <PieSegments
+                        percentage="0.395"
+                        color="#FF9C36"
+                        strokeColor="#FF9C36"
+                      />
+                    </div>
+                  </div>
+                  <div className="page__visual__pie__wrapper">
+                    <div className="page__visual__pie page__visual__pie--rotate-tax">
+                      <PieSegments
+                        percentage="0.1"
+                        color="#FF9CAD"
+                        strokeColor="#FF9CAD"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="page__actions">
+            <div className="page__actions__content">
+              <button className="button--primary" onClick={this.myCustomNext}>
+                Continue
+              </button>
             </div>
           </div>
         </div>
 
         <div className="page" data-hash="slide5">
-          <div className="page__section page__text">
-            <div className="page__text__content">
-              <h3 className="headline--two headline--two--bold">
-                <b>Did you know?</b>
-              </h3>
-              <h3 className="headline--two">
-                A small increase to your contribution could make a big
-                difference to your retirement income.
-              </h3>
+          <div className="page__header" />
+          <div className="page__content">
+            <div className="page__section page__text">
+              <div className="page__text__content">
+                <h3 className="headline--two headline--two--bold">
+                  <b>Did you know?</b>
+                </h3>
+                <h3 className="headline--two mb-0">
+                  A small increase to your contribution could make a big
+                  difference to your retirement income.
+                </h3>
+              </div>
             </div>
-            <div className="page__text__actions">
+            <div className="page__section page__visual">
+              <div className="page__visual__content page__visual--statement" />
+            </div>
+          </div>
+          <div className="page__actions">
+            <div className="page__actions__content">
               <button className="button--primary" onClick={this.myCustomNext}>
                 Continue
               </button>
             </div>
           </div>
-          <div className="page__section page__visual">
-            <div className="page__visual__content page__visual--statement" />
-          </div>
         </div>
 
         <div className="page" data-hash="slide6">
-          <div className="page__section page__text">
-            <div className="page__text__content" />
-            <div className="page__text__actions">
-              <h3 className="headline--two headline--two--bold">
-                Change your contribution level to see the effect on your
-                projected total
-              </h3>
-              <div>
-                <div className="input__radio__wrapper">
-                  <input
-                    className="input__radio"
-                    type="radio"
-                    name="contrib"
-                    id="contrib1"
-                    value="0.05"
-                    checked={this.state.contributions_radio.contrib1}
-                  />
+          <div className="page__header" />
+          <div className="page__content">
+            <div className="page__section page__text">
+              <div className="page__text__content p-0">
+                <p className="headline--three headline--three--bold">
+                  Change your contribution to see the effect on your projected
+                  total
+                </p>
+                <div className="input__radio__group">
+                  <div className="input__radio__wrapper input__radio__wrapper--small mr-2">
+                    <input
+                      className="input__radio"
+                      type="radio"
+                      name="contrib"
+                      id="contrib1"
+                      value="0.05"
+                      checked={this.state.contributions_radio.contrib1}
+                    />
 
-                  <label
-                    htmlFor="contrib1"
-                    className="input__radio__label"
-                    onClick={this.currentAmount}
-                  >
-                    <span className="input__radio__circle" />
-                    <span>
-                      {Math.round(
-                        data.personas[0].pensions.pot.now.contributions
-                          .personal * 100
-                      )}
-                      % - &pound;
-                      {Math.round(
-                        data.personas[0].pensions.pot.now.contributions.amount
-                          .personal
-                      )}{" "}
-                      (What you pay now)
-                    </span>
-                  </label>
-                </div>
-                <div className="input__radio__wrapper">
-                  <input
-                    className="input__radio"
-                    type="radio"
-                    name="contrib"
-                    id="contrib2"
-                    value="0.06"
-                    checked={this.state.contributions_radio.contrib2}
-                  />
+                    <label
+                      htmlFor="contrib1"
+                      className="input__radio__label"
+                      onClick={this.currentAmount}
+                    >
+                      <span className="input__radio__circle" />
+                      <div>
+                        <span className="input__radio__label__header">
+                          {Math.round(
+                            data.personas[0].pensions.pot.now.contributions
+                              .personal * 100
+                          )}
+                          %
+                        </span>
+                        <br />
+                        <span className="input__radio__label__body">
+                          &pound;
+                          {Math.round(
+                            data.personas[0].pensions.pot.now.contributions
+                              .amount.personal
+                          )}{" "}
+                          (Now)
+                        </span>
+                      </div>
+                    </label>
+                  </div>
+                  <div className="input__radio__wrapper input__radio__wrapper--small mr-2">
+                    <input
+                      className="input__radio"
+                      type="radio"
+                      name="contrib"
+                      id="contrib2"
+                      value="0.06"
+                      checked={this.state.contributions_radio.contrib2}
+                    />
 
-                  <label
-                    htmlFor="contrib2"
-                    className="input__radio__label"
-                    onClick={this.futureAmount}
-                  >
-                    <span className="input__radio__circle" />
-                    <span>
-                      {Math.round(
-                        data.personas[0].pensions.pot.future.contributions
-                          .personal * 100
-                      )}
-                      % - &pound;
-                      {Math.round(
-                        data.personas[0].pensions.pot.future.contributions
-                          .amount.personal
-                      )}{" "}
-                      (+&pound;
-                      {Math.round(
-                        data.personas[0].pensions.pot.future.contributions
-                          .amount.personal -
-                          data.personas[0].pensions.pot.now.contributions.amount
-                            .personal
-                      )}
-                      )
-                    </span>
-                  </label>
-                </div>
-                <div className="input__radio__wrapper">
-                  <input
-                    className="input__radio"
-                    type="radio"
-                    name="contrib"
-                    id="contrib3"
-                    value="0.07"
-                    checked={this.state.contributions_radio.contrib3}
-                  />
+                    <label
+                      htmlFor="contrib2"
+                      className="input__radio__label"
+                      onClick={this.futureAmount}
+                    >
+                      <span className="input__radio__circle" />
+                      <div>
+                        <span className="input__radio__label__header">
+                          {Math.round(
+                            data.personas[0].pensions.pot.future.contributions
+                              .personal * 100
+                          )}
+                          %
+                        </span>
+                        <br />
+                        <span className="input__radio__label__body">
+                          &pound;
+                          {Math.round(
+                            data.personas[0].pensions.pot.future.contributions
+                              .amount.personal
+                          )}{" "}
+                          (+&pound;
+                          {Math.round(
+                            data.personas[0].pensions.pot.future.contributions
+                              .amount.personal -
+                              data.personas[0].pensions.pot.now.contributions
+                                .amount.personal
+                          )}
+                          )
+                        </span>
+                      </div>
+                    </label>
+                  </div>
+                  <div className="input__radio__wrapper input__radio__wrapper--small">
+                    <input
+                      className="input__radio"
+                      type="radio"
+                      name="contrib"
+                      id="contrib3"
+                      value="0.07"
+                      checked={this.state.contributions_radio.contrib3}
+                    />
 
-                  <label
-                    htmlFor="contrib3"
-                    className="input__radio__label"
-                    onClick={this.superFutureAmount}
-                  >
-                    <span className="input__radio__circle" />
-                    <span>
-                      {Math.round(
-                        data.personas[0].pensions.pot.superfuture.contributions
-                          .personal * 100
-                      )}
-                      % - &pound;
-                      {Math.round(
-                        data.personas[0].pensions.pot.superfuture.contributions
-                          .amount.personal
-                      )}{" "}
-                      (+&pound;
-                      {Math.round(
-                        data.personas[0].pensions.pot.superfuture.contributions
-                          .amount.personal -
-                          data.personas[0].pensions.pot.now.contributions.amount
-                            .personal
-                      )}
-                      )
-                    </span>
-                  </label>
+                    <label
+                      htmlFor="contrib3"
+                      className="input__radio__label"
+                      onClick={this.superFutureAmount}
+                    >
+                      <span className="input__radio__circle" />
+                      <div>
+                        <span className="input__radio__label__header">
+                          {Math.round(
+                            data.personas[0].pensions.pot.superfuture
+                              .contributions.personal * 100
+                          )}
+                          %
+                        </span>
+                        <br />
+                        <span className="input__radio__label__body">
+                          &pound;
+                          {Math.round(
+                            data.personas[0].pensions.pot.superfuture
+                              .contributions.amount.personal
+                          )}{" "}
+                          (+&pound;
+                          {Math.round(
+                            data.personas[0].pensions.pot.superfuture
+                              .contributions.amount.personal -
+                              data.personas[0].pensions.pot.now.contributions
+                                .amount.personal
+                          )}
+                          )
+                        </span>
+                      </div>
+                    </label>
+                  </div>
                 </div>
+                <h3 className="headline--three">
+                  *Your employer will match your contributions up to 5%
+                  <br />
+                </h3>
               </div>
-              <h3 className="headline--three">
+            </div>
+            <div className="page__section page__visual">
+              <div className="page__visual__content">
                 <br />
-                *Your employer will match your contributions up to 5%
-                <br />
-                <br />
-              </h3>
-              <button className="button--primary" onClick={this.myCustomNext}>
-                Finish
-              </button>
+                <PotText />
+              </div>
             </div>
           </div>
-          <div className="page__section page__visual">
-            <div className="page__visual__content">
-              <br />
-              <PotText />
+          <div className="page__actions">
+            <div className="page__actions__content">
+              <button className="button--primary" onClick={this.myCustomNext}>
+                Continue
+              </button>
             </div>
           </div>
         </div>
 
         <div className="page" data-hash="slide7">
-          <div className="page__section page__text">
-            <div className="page__text__content">
-              {this.props.calculate.percentage > 4 && (
-                <div>
-                  <h2>You've changed your contributions.</h2>
-                  <h2 className="headline--two headline--two--bold">
-                    Check you’re happy with the change to your contributions.
+          <div className="page__header" />
+          <div className="page__content">
+            <div className="page__section page__text">
+              <div className="page__text__content">
+                {this.props.calculate.percentage > 4 && (
+                  <div>
+                    <h2>You've changed your contributions.</h2>
+                    <h2 className="headline--two headline--two--bold">
+                      Check you’re happy with the change to your contributions.
+                    </h2>
+                    <br />
+                    <h3 className="headline--three">
+                      Your new contribution:{" "}
+                      <span>
+                        {Math.round(this.props.calculate.percentage)}%
+                      </span>
+                    </h3>
+                    <h3 className="headline--three">
+                      Your employer's new contribution:{" "}
+                      {Math.round(this.props.calculate.percentage_employer)}%
+                    </h3>
+                  </div>
+                )}
+                {this.props.calculate.percentage <= 4 && (
+                  <h2 className="mb-0">
+                    Your contribution value hasn't changed.
                   </h2>
-                  <br />
-                  <h3 className="headline--three">
-                    Your new contribution:{" "}
-                    <span>{Math.round(this.props.calculate.percentage)}%</span>
-                  </h3>
-                  <h3 className="headline--three">
-                    Your employer's new contribution:{" "}
-                    {Math.round(this.props.calculate.percentage_employer)}%
-                  </h3>
-                </div>
-              )}
-              {this.props.calculate.percentage <= 4 && (
-                <h2>Your contribution value hasn't changed.</h2>
-              )}
+                )}
+              </div>
             </div>
-            <div className="page__text__actions">
-              <br />
+            <div className="page__section page__visual">
+              <div className="page__visual__content page__visual--statement" />
+            </div>
+          </div>
+          <div className="page__actions">
+            <div className="page__actions__content">
               <button className="button--primary" onClick={this.myCustomNext}>
                 Continue
               </button>
             </div>
           </div>
-          <div className="page__section page__visual">
-            <div className="page__visual__content page__visual--statement" />
-          </div>
         </div>
 
         <div className="page" data-hash="slide8">
-          <div className="page__section page__text">
-            <div className="page__text__content">
-              <div>
-                <h2>Thanks, that's the end of the test.</h2>
-                <h2 className="headline--two headline--two--bold">
-                  You can end your session on usertesting.com
-                </h2>
+          <div className="page__header" />
+          <div className="page__content">
+            <div className="page__section page__text">
+              <div className="page__text__content">
+                <div>
+                  <h2>Thanks, that's the end of the test.</h2>
+                  <h2 className="headline--two headline--two--bold mb-0">
+                    You can end your session on usertesting.com
+                  </h2>
+                </div>
               </div>
             </div>
+            <div className="page__section page__visual">
+              <div className="page__visual__content page__visual--statement page__visual--coffee" />
+            </div>
           </div>
-          <div className="page__section page__visual">
-            <div className="page__visual__content page__visual--statement" />
+          <div className="page__actions">
+            <div className="page__actions__content" />
           </div>
         </div>
       </Flickity>

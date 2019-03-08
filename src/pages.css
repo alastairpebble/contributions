@@ -24,6 +24,51 @@ h3 {
   bottom: 0;
 }
 
+.page__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+@media (min-width: 800px) {
+  .page__content {
+    flex-direction: column;
+  }
+}
+
+.page__content .page__section {
+  flex: 1 !important;
+}
+
+.page__header {
+  max-height: 72px;
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.page__actions {
+  max-height: 72px;
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.page__actions__content {
+  padding: 16px 32px;
+}
+
+@media (min-width: 200px) {
+  .page__actions__content button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  .page__actions__content button {
+    width: 256px;
+    margin: 0 auto;
+  }
+}
+
 .page__section {
   position: relative;
 }
@@ -49,6 +94,9 @@ h3 {
   margin: 0 auto;
 }
 
+.page__actions {
+  flex: 1;
+}
 .page__visual__content {
   //padding: 48px;
 }
@@ -112,6 +160,16 @@ h3 {
   background-size: 75%;
 }
 
+.page__visual--coffee {
+  height: 0;
+  padding-bottom: 100%;
+  background-image: url("/Illustration-Coffee@3x.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
 @media (min-width: 200px) {
   .page {
     flex-direction: column;
@@ -132,7 +190,7 @@ h3 {
 }
 
 @media (min-width: 800px) {
-  .page {
+  .page__content {
     flex-direction: row;
   }
 
@@ -171,7 +229,7 @@ h3 {
   line-height: 48px;
   letter-spacing: 0.5px;
   font-weight: 700;
-  margin-top: 0px;
+  margin-top: 8px;
   margin-bottom: 16px;
 }
 
@@ -208,6 +266,10 @@ h3 {
   font-weight: 500;
 }
 
+.headline--three--bold {
+  font-weight: 700;
+}
+
 .headline--two span {
   font-weight: 700;
   border-radius: 6px;
@@ -216,6 +278,16 @@ h3 {
   padding: 0px 6px;
   margin-left: 2px;
   margin-right: 2px;
+}
+
+.text__body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.text__body--bold {
+  font-weight: 700;
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
@@ -249,6 +321,11 @@ h3 {
   color: #002c53;
 }
 
+.input__radio__group {
+  display: flex;
+  min-height: 100px;
+  width: 100%;
+}
 .input__radio__wrapper {
   position: relative;
   width: 100%;
@@ -262,7 +339,6 @@ h3 {
 .input__radio__label {
   display: block;
   display: flex;
-  height: 28px;
   margin: 4px 0px;
   text-align: left;
   padding: 12px;
@@ -302,6 +378,14 @@ h3 {
   border: 2px solid #00335a;
 }
 
+.input__radio__wrapper--small {
+  min-height: 96px;
+  flex: 1;
+}
+.input__radio__wrapper--small .input__radio__circle {
+  display: none;
+}
+
 .input__radio + label .input__radio__circle {
 }
 
@@ -314,6 +398,23 @@ h3 {
   margin-left: 8px;
   position: relative;
   top: 2px;
+}
+
+.input__radio__label__header {
+  margin: 0 4px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.input__radio__label__body {
+  margin: 0 4px;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .input__radio__label__body {
+    font-size: 14px;
+  }
 }
 
 .swiper-pagination-bullet-active {

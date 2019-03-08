@@ -145,3 +145,7 @@ https://flickity.metafizzy.co
 .flickity-page-dots .dot.is-selected {
   opacity: 1;
 }
+
+.flickity-prev-next-button {
+  display: none;
+}

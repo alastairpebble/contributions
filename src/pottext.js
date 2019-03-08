@@ -23,11 +23,13 @@ class PotText extends React.Component {
   };
 
   render() {
+    let monthString = `and ${this.props.calculate.income.for.months} months`;
+    if (this.props.calculate.income.for.months == 0) {
+      monthString = "";
+    }
     return (
       <div className="counter">
-        <h1 className="headline--one">
-          <b>Projected Total*</b>
-        </h1>
+        <h1 className="headline--two mb-0">Projected Total*</h1>
         <h1 className="headline--money">
           £{Math.round(this.props.calculate.number).toLocaleString("en")}
         </h1>
@@ -39,8 +41,8 @@ class PotText extends React.Component {
               "en"
             )}
           </b>{" "}
-          for <b>{this.props.calculate.income.for.years}</b> years and{" "}
-          <b>{this.props.calculate.income.for.months}</b> months
+          <br />
+          for {this.props.calculate.income.for.years} years {monthString}
         </h3>
         <span style={{ opacity: 0 }}>
           ({Math.round(this.props.calculate.percentage)}%)

@@ -22,6 +22,36 @@ body {
   text-align: center;
 }
 
+.mt-0 {
+  margin-top: 0 !important;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 4px;
+}
+
+.p-0 {
+  padding: 0px !important;
+}
+.p-1 {
+  padding: 4px !important;
+}
+.p-2 {
+  padding: 8px !important;
+}
+.p-3 {
+  padding: 12px !important;
+}
+.p-4 {
+  padding: 16px !important;
+}
+
 .button--primary {
   display: block;
   text-decoration: none;
