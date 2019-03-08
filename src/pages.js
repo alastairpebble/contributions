@@ -31,6 +31,10 @@ class Pages extends React.Component {
         contrib1: true,
         contrib2: false,
         contrib3: false
+      },
+      contributions_confirm_radio: {
+        yes: true,
+        no: false
       }
     };
   }
@@ -42,6 +46,24 @@ class Pages extends React.Component {
   goPrev() {
     if (this.swiper) this.swiper.slidePrev();
   }
+
+  confirmYesContributionChange = () => {
+    this.setState({
+      contributions_confirm_radio: {
+        yes: true,
+        no: false
+      }
+    });
+  };
+
+  confirmNoContributionChange = () => {
+    this.setState({
+      contributions_confirm_radio: {
+        yes: false,
+        no: true
+      }
+    });
+  };
 
   currentAmount = () => {
     this.props.dispatch({ type: "CALCULATECURRENT" });
@@ -334,7 +356,7 @@ class Pages extends React.Component {
         <div className="page" data-hash="slide6">
           <div className="page__header" />
           <div className="page__content">
-            <div className="page__section page__text">
+            <div className="page__section page__text p-4">
               <div className="page__text__content p-0">
                 <p className="headline--three headline--three--bold">
                   Change your contribution to see the effect on your projected
@@ -486,15 +508,90 @@ class Pages extends React.Component {
           </div>
         </div>
 
-        <div className="page" data-hash="slide7">
+        <div id="celebration-slide--slide7" className="page" data-hash="slide7">
           <div className="page__header" />
           <div className="page__content">
-            <div className="page__section page__text">
+            <div className="page__section page__text p-4">
+              {this.props.calculate.percentage > 4 && (
+                <div className="page__text__content p-0">
+                  <h2 className="headline--three headline--three--bold">
+                    Check you’re happy with the change to your contributions.
+                  </h2>
+                  <div className="input__radio__group input__radio__group--vertical">
+                    <div className="input__radio__wrapper">
+                      <input
+                        className="input__radio"
+                        type="radio"
+                        name="contrib_confirm"
+                        id="contrib_confirm_yes"
+                        value="yes"
+                        checked={this.state.contributions_confirm_radio.yes}
+                      />
+
+                      <label
+                        htmlFor="contrib_confirm_yes"
+                        className="input__radio__label"
+                        onClick={this.confirmYesContributionChange}
+                      >
+                        <span className="input__radio__circle" />
+                        <div>
+                          <span className="input__radio__label__header">
+                            Yes
+                          </span>
+                          <br />
+                          <span className="input__radio__label__body">
+                            I would like to increase my contributions to{" "}
+                            {Math.round(this.props.calculate.percentage)}%.
+                          </span>
+                        </div>
+                      </label>
+                    </div>
+                    <div className="input__radio__wrapper">
+                      <input
+                        className="input__radio"
+                        type="radio"
+                        name="contrib_confirm"
+                        id="contrib_confirm_no"
+                        value="no"
+                        checked={this.state.contributions_confirm_radio.no}
+                      />
+
+                      <label
+                        htmlFor="contrib_confirm_no"
+                        className="input__radio__label"
+                        onClick={this.confirmNoContributionChange}
+                      >
+                        <span className="input__radio__circle" />
+                        <div>
+                          <span className="input__radio__label__header">
+                            No
+                          </span>
+                          <br />
+                          <span className="input__radio__label__body">
+                            I would like to keep my contributions the same for
+                            now.
+                          </span>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              )}
+              {this.props.calculate.percentage <= 4 && (
+                <div className="page__text__content">
+                  <h2 className="headline--three mb-0">
+                    You can go to the previous screen and change your
+                    contribution, or leave it as it is for now.
+                  </h2>
+                </div>
+              )}
+            </div>
+            <div className="page__section page__visual">
               <div className="page__text__content">
                 {this.props.calculate.percentage > 4 && (
                   <div>
-                    <h2 className="headline--three headline--three--bold">
-                      Check you’re happy with the change to your contributions.
+                    <h2 className="headline--three headline--three--bold mb-0">
+                      Your contributions have changed.
                     </h2>
                     <br />
                     <h3 className="headline--three">
@@ -510,14 +607,11 @@ class Pages extends React.Component {
                   </div>
                 )}
                 {this.props.calculate.percentage <= 4 && (
-                  <h2 className="mb-0">
+                  <h2 className="headline--three headline--three--bold mb-0">
                     Your contribution value hasn't changed.
                   </h2>
                 )}
               </div>
-            </div>
-            <div className="page__section page__visual">
-              <div className="page__visual__content page__visual--statement" />
             </div>
           </div>
           <div className="page__actions">

@@ -326,6 +326,10 @@ h3 {
   min-height: 100px;
   width: 100%;
 }
+
+.input__radio__group--vertical {
+  flex-direction: column;
+}
 .input__radio__wrapper {
   position: relative;
   width: 100%;
@@ -364,6 +368,8 @@ h3 {
   position: relative;
   box-sizing: border-box;
   width: 24px;
+  min-width: 24px;
+  max-width: 24px;
   height: 24px;
   margin-right: 8px;
   border-radius: 12px;
@@ -407,13 +413,13 @@ h3 {
 }
 .input__radio__label__body {
   margin: 0 4px;
-  font-size: 12px;
-  letter-spacing: -0.5px;
+  font-size: 13px;
   font-weight: 500;
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .input__radio__label__body {
     font-size: 14px;
+    letter-spacing: initial;
   }
 }
 
@@ -423,4 +429,23 @@ h3 {
 
 .input__radio__wrapper + .button--primary {
   margin-top: 16px;
+}
+
+#celebration-slide--slide7 .page__content .page__visual {
+  flex: 2 !important;
+}
+
+#celebration-slide--slide7 .page__content .page__text {
+  flex: 5 !important;
+}
+
+@media (min-width: 800px) {
+  #celebration-slide--slide7 .page__content .page__visual {
+    order: 1;
+    flex: 1 !important;
+  }
+  #celebration-slide--slide7 .page__content .page__text {
+    order: 2;
+    flex: 1 !important;
+  }
 }
